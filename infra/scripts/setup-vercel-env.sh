@@ -35,11 +35,11 @@ printf "%s" "${REF_ID}" | npx vercel env add NEXT_PUBLIC_SLOTSLAUNCH_REF_ID prod
 printf "%s" "${REF_ID}" | npx vercel env add NEXT_PUBLIC_SLOTSLAUNCH_REF_ID preview --force 2>/dev/null || true
 
 echo "=================================================="
-echo "2. TRIGGERING AUTOMATIC PRODUCTION REDEPLOY"
+echo "2. TRIGGERING DEPLOYMENT VIA GIT PUSH"
 echo "=================================================="
 
-npx vercel --prod --yes
+git push origin main || true
 
 echo "=================================================="
-echo "✅ SUCCESS: VERCEL ENV SET & DEPLOYED!"
+echo "✅ SUCCESS: VERCEL ENV SET & TRIGGERED ON GITHUB!"
 echo "=================================================="
