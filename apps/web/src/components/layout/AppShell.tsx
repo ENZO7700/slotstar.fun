@@ -15,7 +15,7 @@ export function AppShell({ children }: AppShellProps) {
       <Sidebar />
 
       {/* Main Layout Area */}
-      <div className="flex flex-col flex-1 lg:ml-[240px] min-w-0">
+      <div className="flex flex-col flex-1 lg:ml-60 min-w-0">
         {/* Sticky Top Header */}
         <Header />
 

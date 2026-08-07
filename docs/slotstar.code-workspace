@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"google.cloud.billingQuotaProject": "slotstars-504820"
+	}
+}
