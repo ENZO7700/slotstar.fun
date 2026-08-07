@@ -14,7 +14,7 @@ export function GameRail({ games }: GameRailProps) {
         {games.map((game, index) => (
           <div
             key={game.id}
-            className="w-[160px] sm:w-[200px] shrink-0 snap-start"
+            className="w-40 sm:w-50 shrink-0 snap-start"
           >
             <GameCard game={game} priority={index < 2} />
           </div>
