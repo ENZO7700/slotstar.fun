@@ -3,7 +3,7 @@ import { z } from 'zod';
 
 const envSchema = z.object({
   WORDPRESS_API_URL: z.string().url().default('http://localhost:8080/wp-json'),
-  NEXT_PUBLIC_SITE_URL: z.string().url().default('https://slotstars.fun'),
+  NEXT_PUBLIC_SITE_URL: z.string().url().default('https://slotstar.fun'),
 });
 
 function parseEnv() {

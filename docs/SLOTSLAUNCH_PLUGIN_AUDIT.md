@@ -81,7 +81,7 @@ PURPOSE: Reads `$opts = slotsl_settings(); $args['token'] = $opts['license'];` f
 FILE: `apps/wordpress/wp-content/plugins/slotslaunch/includes/class-slotslaunch-client.php`  
 LINE: 37  
 SYMBOL: `Origin` header  
-PURPOSE: Sends `'Origin' => empty($_SERVER['HTTP_HOST']) ? parse_url(get_site_url(), PHP_URL_HOST ) : $_SERVER['HTTP_HOST']`. The API key is domain-bound to `slotstars.fun`.
+PURPOSE: Sends `'Origin' => empty($_SERVER['HTTP_HOST']) ? parse_url(get_site_url(), PHP_URL_HOST ) : $_SERVER['HTTP_HOST']`. The API key is domain-bound to `slotstar.fun`.
 
 ### Embed / Iframe Generator
 FILE: `apps/wordpress/wp-content/plugins/slotslaunch/includes/class-slotslaunch-client.php`  

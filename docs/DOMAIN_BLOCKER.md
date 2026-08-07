@@ -2,13 +2,13 @@
 
 ## Current Domain Configurations
 
-- **REPOSITORY DOMAIN**: `slotstars.fun`
-- **SLOTSLAUNCH WHITELIST**: `slotstars.fun`
+- **REPOSITORY DOMAIN**: `slotstar.fun`
+- **SLOTSLAUNCH WHITELIST**: `slotstar.fun`
 
 ---
 
 ## Status
 > [!NOTE]
 > **STATUS: RESOLVED**
-> **FINAL DOMAIN**: `slotstars.fun`
+> **FINAL DOMAIN**: `slotstar.fun`
 > **SLOTSLAUNCH MATCH**: `YES`

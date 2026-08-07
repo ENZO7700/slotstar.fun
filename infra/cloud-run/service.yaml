@@ -23,9 +23,9 @@ spec:
               memory: "1024Mi"
           env:
             - name: WP_HOME
-              value: "https://cms.slotstars.fun"
+              value: "https://cms.slotstar.fun"
             - name: WP_SITEURL
-              value: "https://cms.slotstars.fun"
+              value: "https://cms.slotstar.fun"
             - name: DB_NAME
               value: "${DB_NAME}"
             - name: DB_USER

@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: SlotStar Headless API
- * Plugin URI: https://slotstars.fun
+ * Plugin URI: https://slotstar.fun
  * Description: Headless REST API adapter for SlotStar connecting SlotsLaunch data with Next.js frontend.
  * Version: 1.0.0
  * Author: SlotStar Team

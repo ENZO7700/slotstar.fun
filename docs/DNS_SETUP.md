@@ -1,6 +1,6 @@
 # DNS & Domain Configuration
 
-This document specifies the target DNS records required to link SlotStars production hosts to Vercel and Google Cloud.
+This document specifies the target DNS records required to link SlotStar production hosts to Vercel and Google Cloud.
 
 ---
 
@@ -8,9 +8,9 @@ This document specifies the target DNS records required to link SlotStars produc
 
 | Domain Host | Service Provider | Target Destination | Purpose |
 | :--- | :--- | :--- | :--- |
-| `slotstars.fun` | Vercel | `76.76.21.21` (A) | Next.js canonical frontend |
-| `www.slotstars.fun` | Vercel | `cname.vercel-dns.com` | Next.js frontend alias |
-| `cms.slotstars.fun` | Google Cloud | GCLB / Cloud Run custom map | WordPress headless admin |
+| `slotstar.fun` | Vercel | `76.76.21.21` (A) | Next.js canonical frontend |
+| `www.slotstar.fun` | Vercel | `cname.vercel-dns.com` | Next.js frontend alias |
+| `cms.slotstar.fun` | Google Cloud | GCLB / Cloud Run custom map | WordPress headless admin |
 
 ---
 
@@ -36,8 +36,8 @@ Value: cname.vercel-dns.com
 
 Use Google Cloud Run Custom Domains settings to generate secure mappings:
 
-1. In Google Cloud Console, navigate to **Cloud Run -> slotstars-wordpress -> Manage Custom Domains**.
-2. Click **Add Mapping**. Select your verified domain `slotstars.fun` and set the subdomain prefix to `cms`.
+1. In Google Cloud Console, navigate to **Cloud Run -> slotstar-wordpress -> Manage Custom Domains**.
+2. Click **Add Mapping**. Select your verified domain `slotstar.fun` and set the subdomain prefix to `cms`.
 3. GCP will automatically request a free Let's Encrypt SSL certificate and output the DNS destination.
 4. Add the generated DNS CNAME records to your domain registrar settings:
    ```text

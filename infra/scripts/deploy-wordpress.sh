@@ -54,4 +54,4 @@ echo "Cleaning up temporary deployment file..."
 rm -f "${DEPLOY_FILE}"
 
 echo "WordPress deployed successfully to Cloud Run."
-echo "Map your custom domain cms.slotstars.fun in GCP settings."
+echo "Map your custom domain cms.slotstar.fun in GCP settings."

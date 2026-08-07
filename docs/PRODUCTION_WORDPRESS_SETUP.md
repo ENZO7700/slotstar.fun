@@ -33,9 +33,9 @@ Google Cloud Run is **serverless and ephemeral**. If no traffic reaches the site
    ```
 2. Create a secure **Google Cloud Scheduler** job that calls the cron endpoint externally every 15 minutes:
    ```bash
-   gcloud scheduler jobs create http slotstars-cron \
+   gcloud scheduler jobs create http slotstar-cron \
      --schedule="*/15 * * * *" \
-     --uri="https://cms.slotstars.fun/wp-cron.php?doing_wp_cron" \
+     --uri="https://cms.slotstar.fun/wp-cron.php?doing_wp_cron" \
      --http-method=GET \
      --location="europe-west3" \
      --project="your-gcp-project-id"

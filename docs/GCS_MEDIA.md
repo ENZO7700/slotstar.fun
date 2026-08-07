@@ -39,4 +39,4 @@ Recommended options:
 ## 3. CDN & Cache Control Configurations
 
 - **Browser Cache TTL**: Configure GCS default object headers to include Cache-Control max-age (e.g. `Cache-Control: public, max-age=31536000`).
-- **Cloud CDN integration**: Map a custom subdomain (e.g. `media.slotstars.fun`) to Google Cloud CDN pointing to the bucket backend to speed up delivery and reduce egress bandwidth charges.
+- **Cloud CDN integration**: Map a custom subdomain (e.g. `media.slotstar.fun`) to Google Cloud CDN pointing to the bucket backend to speed up delivery and reduce egress bandwidth charges.

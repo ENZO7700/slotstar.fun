@@ -2,7 +2,7 @@
 
 The `slotstar-headless` WordPress plugin exposes clean, read-only headless REST API endpoints for Next.js frontend consumption.
 
-Base URL: `http://localhost:8080/wp-json/slotstar/v1` (Production: `https://cms.slotstars.fun/wp-json/slotstar/v1`)
+Base URL: `http://localhost:8080/wp-json/slotstar/v1` (Production: `https://cms.slotstar.fun/wp-json/slotstar/v1`)
 
 ---
 

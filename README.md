@@ -1,13 +1,13 @@
-# SlotStars.fun — WordPress & Next.js Monorepo
+# SlotStar.fun — WordPress & Next.js Monorepo
 
-Tento repozitár obsahuje kompletný zdrojový kód pre casino affiliate portál **SlotStars.fun**. Projekt spája robustný backend postavený na WordPress s moderným, vysoko optimalizovaným Next.js frontendom.
+Tento repozitár obsahuje kompletný zdrojový kód pre casino affiliate portál **SlotStar.fun**. Projekt spája robustný backend postavený na WordPress s moderným, vysoko optimalizovaným Next.js frontendom.
 
 ---
 
 ## 1. Informácie o projekte
-- **Názov**: SlotStars
-- **Hlavná produkčná doména**: `https://slotstars.fun`
-- **Subdoména administrácie (CMS)**: `https://cms.slotstars.fun`
+- **Názov**: SlotStar
+- **Hlavná produkčná doména**: `https://slotstar.fun`
+- **Subdoména administrácie (CMS)**: `https://cms.slotstar.fun`
 - **Affiliate Ref ID**: `wa1UHO8r` (Slots Launch Marketing Ref Link: `https://slotslaunch.com?ref=wa1UHO8r`)
 
 ---

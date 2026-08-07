@@ -4,7 +4,7 @@ This guide explains how to deploy the SlotStar Next.js frontend application (`ap
 
 ## 1. Prerequisites
 - A Vercel account linked to your GitHub/GitLab repository.
-- Production WordPress endpoint URL (e.g. `https://cms.slotstars.fun`).
+- Production WordPress endpoint URL (e.g. `https://cms.slotstar.fun`).
 
 ---
 
@@ -20,7 +20,7 @@ When importing the project in the Vercel Dashboard, apply the following settings
    - **Install Command**: `npm install` (or leave default to let Vercel handle npm workspaces).
 4. **Environment Variables**:
    Add the following production environment variables:
-   - `WORDPRESS_API_URL`: `https://cms.slotstars.fun/wp-json` (Replace with your actual live WordPress URL).
+   - `WORDPRESS_API_URL`: `https://cms.slotstar.fun/wp-json` (Replace with your actual live WordPress URL).
    - `NEXT_PUBLIC_ENABLE_DEV_FIXTURES`: `false` (Ensures the app pulls live data from WordPress instead of the mock assets).
 
 ---
@@ -39,7 +39,7 @@ If you prefer to deploy directly from your local terminal using the Vercel CLI, 
    cd apps/web
    vercel link
    ```
-   Select your Vercel team, choose to link to a new project, and name it `slotstars.fun`.
+   Select your Vercel team, choose to link to a new project, and name it `slotstar.fun`.
 
 3. **Configure Monorepo settings** if prompted, or verify that Vercel recognizes the root directory as `apps/web`.
 
