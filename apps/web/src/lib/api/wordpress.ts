@@ -333,7 +333,101 @@ export async function getFilters(params: GetTaxonomyParams = {}): Promise<Pagina
   }
 }
 
+// ─── Blog / WordPress Posts ────────────────────────────────────────────────
+
+export interface BlogPost {
+  id: number;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  date: string;
+  modified: string;
+  featuredImage: string | null;
+  author: string;
+}
+
+export interface GetBlogPostsParams {
+  page?: number;
+  perPage?: number;
+  search?: string;
+}
+
+export async function getBlogPosts(params: GetBlogPostsParams = {}): Promise<{ data: BlogPost[]; total: number; totalPages: number }> {
+  const { page = 1, perPage = 10, search } = params;
+  try {
+    const url = new URL(`${env.WORDPRESS_API_URL}/wp/v2/posts`);
+    url.searchParams.set('page', String(page));
+    url.searchParams.set('per_page', String(perPage));
+    url.searchParams.set('_embed', '1');
+    if (search) url.searchParams.set('search', search);
+
+    const res = await fetch(url.toString(), { next: { revalidate: 120, tags: ['blog'] } });
+    if (!res.ok) return { data: [], total: 0, totalPages: 0 };
+
+    const posts = await res.json();
+    const total = parseInt(res.headers.get('X-WP-Total') || '0', 10);
+    const totalPages = parseInt(res.headers.get('X-WP-TotalPages') || '1', 10);
+
+    const data: BlogPost[] = posts.map((p: Record<string, unknown>) => {
+      const embedded = p._embedded as Record<string, unknown> | undefined;
+      const authorArr = embedded?.author as Array<{ name?: string }> | undefined;
+      const mediaArr = embedded?.['wp:featuredmedia'] as Array<{ source_url?: string }> | undefined;
+
+      return {
+        id: p.id as number,
+        slug: p.slug as string,
+        title: ((p.title as { rendered?: string })?.rendered ?? '').replace(/<[^>]*>/g, ''),
+        excerpt: ((p.excerpt as { rendered?: string })?.rendered ?? '').replace(/<[^>]*>/g, '').trim(),
+        content: (p.content as { rendered?: string })?.rendered ?? '',
+        date: p.date as string,
+        modified: p.modified as string,
+        featuredImage: mediaArr?.[0]?.source_url ?? null,
+        author: authorArr?.[0]?.name ?? 'SlotStar',
+      };
+    });
+
+    return { data, total, totalPages };
+  } catch {
+    return { data: [], total: 0, totalPages: 0 };
+  }
+}
+
+export async function getBlogPost(slug: string): Promise<BlogPost | null> {
+  try {
+    const url = new URL(`${env.WORDPRESS_API_URL}/wp/v2/posts`);
+    url.searchParams.set('slug', slug);
+    url.searchParams.set('_embed', '1');
+
+    const res = await fetch(url.toString(), { next: { revalidate: 300, tags: [`blog:${slug}`] } });
+    if (!res.ok) return null;
+
+    const posts = await res.json();
+    if (!Array.isArray(posts) || posts.length === 0) return null;
+
+    const p = posts[0] as Record<string, unknown>;
+    const embedded = p._embedded as Record<string, unknown> | undefined;
+    const authorArr = embedded?.author as Array<{ name?: string }> | undefined;
+    const mediaArr = embedded?.['wp:featuredmedia'] as Array<{ source_url?: string }> | undefined;
+
+    return {
+      id: p.id as number,
+      slug: p.slug as string,
+      title: ((p.title as { rendered?: string })?.rendered ?? '').replace(/<[^>]*>/g, ''),
+      excerpt: ((p.excerpt as { rendered?: string })?.rendered ?? '').replace(/<[^>]*>/g, '').trim(),
+      content: (p.content as { rendered?: string })?.rendered ?? '',
+      date: p.date as string,
+      modified: p.modified as string,
+      featuredImage: mediaArr?.[0]?.source_url ?? null,
+      author: authorArr?.[0]?.name ?? 'SlotStar',
+    };
+  } catch {
+    return null;
+  }
+}
+
 // Helpers for mock paging
+
 function getMockGamesPaginated(params: GetGamesParams): PaginatedResponse<GameSummary> {
   let filtered = [...mockGames];
 

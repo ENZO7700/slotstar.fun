@@ -15,10 +15,12 @@ export function Sidebar() {
     { name: 'Nové hry', href: '/new-games', icon: Icons.Calendar },
     { name: 'Odporúčané', href: '/featured', icon: Icons.Star },
     { name: 'Pripravované', href: '/upcoming', icon: Icons.Compass },
+    { name: 'Blog', href: '/blog', icon: Icons.BookOpen },
   ];
 
+
   return (
-    <aside className="hidden lg:flex flex-col w-[240px] bg-zinc-900 border-r border-zinc-800 fixed top-0 bottom-0 left-0 z-25">
+    <aside className="hidden lg:flex flex-col w-60 bg-zinc-900 border-r border-zinc-800 fixed top-0 bottom-0 left-0 z-25">
       {/* Brand Header */}
       <div className="h-16 flex items-center px-6 border-b border-zinc-800">
         <Link href="/" className="flex items-center space-x-2">

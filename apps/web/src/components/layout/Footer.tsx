@@ -4,7 +4,7 @@ import Link from 'next/link';
 export function Footer() {
   return (
     <footer className="w-full bg-zinc-950 border-t border-zinc-900 py-10 px-6 mt-auto">
-      <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-360 mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Info Column */}
         <div className="space-y-3">
           <span className="text-lg font-black tracking-tight text-amber-500">
@@ -28,6 +28,11 @@ export function Footer() {
           <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">Odkazy</h4>
           <ul className="text-xs text-zinc-500 space-y-2">
             <li>
+              <Link href="/blog" className="hover:underline hover:text-zinc-300">
+                Blog
+              </Link>
+            </li>
+            <li>
               <Link href="/responsible-gaming" className="hover:underline hover:text-zinc-300">
                 Zodpovedné hranie
               </Link>
@@ -46,7 +51,7 @@ export function Footer() {
         </div>
       </div>
       
-      <div className="max-w-[1440px] mx-auto mt-8 pt-8 border-t border-zinc-900 flex flex-col sm:flex-row justify-between items-center text-[10px] text-zinc-600">
+      <div className="max-w-360 mx-auto mt-8 pt-8 border-t border-zinc-900 flex flex-col sm:flex-row justify-between items-center text-[10px] text-zinc-600">
         <p>© 2026 SlotStars.fun. Všetky práva vyhradené.</p>
         <p className="mt-2 sm:mt-0">Určené iba pre osoby staršie ako 18 rokov.</p>
       </div>
