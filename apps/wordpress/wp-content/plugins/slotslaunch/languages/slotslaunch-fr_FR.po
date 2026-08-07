@@ -1,0 +1,1775 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Slots Launch\n"
+"POT-Creation-Date: 2025-12-15 09:21-0300\n"
+"PO-Revision-Date: 2025-12-15 09:21-0300\n"
+"Last-Translator: \n"
+"Language-Team: https://slotslaunch.com\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;_x\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/class-slotslaunch-admin.php:217
+msgid "Embed slot"
+msgstr "Slot intégré"
+
+#: admin/class-slotslaunch-admin.php:236 includes/class-slotslaunch-cpt.php:72
+#: templates/partials/archives/slotsl-filters.php:20
+msgid "All Providers"
+msgstr "Tous les fournisseurs"
+
+#: admin/class-slotslaunch-admin.php:238 includes/class-slotslaunch-cpt.php:99
+#: templates/partials/archives/slotsl-filters.php:92
+msgid "All Themes"
+msgstr "Tous les thèmes"
+
+#: admin/class-slotslaunch-admin.php:240 includes/class-slotslaunch-cpt.php:129
+#: templates/partials/archives/slotsl-filters.php:71
+msgid "All Types"
+msgstr "Tous les types"
+
+#: admin/class-slotslaunch-importer.php:36
+#: admin/class-slotslaunch-importer.php:44
+#: includes/class-slotslaunch-ajax.php:27
+msgid ""
+"Initial Games & Providers installation has started. We will let you know "
+"once it finish."
+msgstr ""
+"L'installation initiale des jeux et fournisseurs a commencé. Nous vous "
+"ferons savoir une fois l'installation terminée."
+
+#: admin/class-slotslaunch-importer.php:50
+#: admin/class-slotslaunch-settings.php:146
+#, fuzzy
+#| msgid ""
+#| "Initial Games & Providers installation has started. We will let you know "
+#| "once it finish."
+msgid "Games are being update. We will let you know once it finish."
+msgstr ""
+"L'installation initiale des jeux et fournisseurs a commencé. Nous vous "
+"ferons savoir une fois l'installation terminée."
+
+#: admin/class-slotslaunch-importer.php:814
+#, php-format
+msgid ""
+"All games installed successfully! You can access all slots <a "
+"href=\"%s\">here</a>."
+msgstr ""
+"Tous les jeux installés avec succès ! Vous pouvez accéder à toutes les slots "
+"<a href=\"%s\">ici</a>."
+
+#: admin/class-slotslaunch-importer.php:818
+msgid "All providers installed successfully! "
+msgstr "Tous les fournisseurs ont été installés avec succès ! "
+
+#: admin/class-slotslaunch-settings.php:157
+msgid "Settings were successfully saved."
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:190
+msgid "General"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:192
+#: admin/class-slotslaunch-settings.php:197
+#: admin/class-slotslaunch-settings.php:202
+#: admin/class-slotslaunch-settings.php:207
+msgid "Save Settings"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:195
+msgid "Monetization"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:200
+msgid "Lobby"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:205
+#: admin/class-slotslaunch-settings.php:619
+msgid "Misc"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:250
+msgid "License"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:250
+msgid "Your license key provides access to updates and addons."
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:257
+msgid "License Key"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:262
+msgid "Slots Archives"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:269
+msgid "Url Slug"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:270
+msgid "Set the default base slug for single slots page"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:277
+msgid "Lobby url"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:278
+msgid ""
+"Set the url where you are using [slotsl-game-archives]. This is mandatory "
+"for breadcrumbs"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:285
+msgid "Enable Breadcrumbs"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:286
+msgid "Set yes to load breacrumbs on the game pages. Lobby url must be set."
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:293
+msgid "Standalone Slots Page"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:294
+msgid ""
+"Set yes to load single slots page on your main [slotsl-game-archives] page "
+"via AJAX."
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:302
+msgid "Single Slot Popup"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:303
+msgid ""
+"Set yes to show a popup instead of loading the game in the same page. Only "
+"works if Standalone Slots Page is enabled."
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:311
+msgid "Button Text"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:312
+msgid "Optional: Customize demo button text"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:319
+msgid "Hide Games"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:320
+msgid "If you want to hide games from some providers, select them here."
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:329
+msgid "Slots Single Plage"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:337
+msgid "Launch Screen Settings"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:338
+msgid ""
+"Optional: Customize the launch screen with your own logo and phrasing for "
+"the launch button. Shortcodes available [slot-name] [slot-image]"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:346
+#: admin/class-slotslaunch-settings.php:349
+#: templates/partials/single/slotsl-placeholder.php:16
+msgid "Play for Free"
+msgstr "Jouer gratuitement"
+
+#: admin/class-slotslaunch-settings.php:347
+#: admin/class-slotslaunch-settings.php:425
+msgid "Button text"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:353
+msgid "Game Frame Color"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:354
+msgid "Optional: Customize theme color."
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:362
+msgid "Display Game Information"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:363
+msgid "Set No to hide the game information on the game page"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:371
+msgid "Display Game Information Position"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:372
+msgid "Set the position of the game information on the game page"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:379
+msgid "Display Ratings"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:380
+msgid "Set No to hide the ratings and rating json schema on the game page"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:388
+msgid "Display Broken Game Form"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:389
+msgid "Set No to hide the broken game form on the game page"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:397
+msgid "Featured Games Widget"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:398
+msgid "Set yes to show the featured games widget"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:407
+msgid "Featured Games"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:408
+msgid "Enter up to three IDs that will show as featured games"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:417
+#, fuzzy
+#| msgid "Play for Real"
+msgid "Play for Real URL"
+msgstr "Jouer en argent réel"
+
+#: admin/class-slotslaunch-settings.php:418
+msgid ""
+"Add your affiliate link to show at launch screen. If empty only \"Play for "
+"free\" button will show."
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:424
+#: admin/class-slotslaunch-settings.php:427
+#: public/class-slotslaunch-public.php:185
+#: templates/partials/archives/slotsl-banner.php:4
+#: templates/partials/single/slotsl-placeholder.php:9
+msgid "Play for Real"
+msgstr "Jouer en argent réel"
+
+#: admin/class-slotslaunch-settings.php:431
+msgid "Popup"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:439
+msgid "Enable game frame Popup?"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:440
+msgid "Set yes to show a popup in the game frame with your play for real link"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:448
+msgid "Popup content"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:449
+msgid ""
+"Optional: Customize the popup with your own phrasing. Shortcodes available "
+"[slot-name]"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:456
+msgid "Seconds to trigger popup?"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:457
+msgid ""
+"By default the popup will show after 30 seconds once the user clicks on "
+"\"play button\""
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:464
+msgid "Scrolling banner"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:471
+msgid "Enable game frame scrolling banner?"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:472
+msgid "Set yes to show a scrolling text banner on single slot pages"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:480
+msgid "Scrolling banner content"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:481
+msgid ""
+"Optional: Customize the popup with your own phrasing. Shortcodes available "
+"[slot-name] and [play-for-real-url]"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:488
+msgid "Slot Archives Banner"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:495
+msgid "Enable Banner?"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:496
+msgid ""
+"This will enable it globally. It can be disable with shortcode attrs if "
+"needed"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:504
+msgid "Banner text"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:505
+msgid "CTA banner will show every X games in your archives pages"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:507
+#, fuzzy
+#| msgid "Play for Real"
+msgid "Play slots for Real Money"
+msgstr "Jouer en argent réel"
+
+#: admin/class-slotslaunch-settings.php:513
+#, fuzzy
+#| msgid "Every minute"
+msgid "Every x games"
+msgstr "Chaque minute"
+
+#: admin/class-slotslaunch-settings.php:514
+msgid "The banner will show after the number of games of your choice"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:524
+msgid "Lobby Sections"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:524
+msgid ""
+"Configure which sections to display in the Netflix-style lobby and their "
+"order."
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:531
+msgid "Sections Order"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:532
+msgid ""
+"Drag and drop to reorder sections. Sections can be enabled/disabled below."
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:538
+msgid "Editor's Pick Section"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:539
+msgid ""
+"Enable Editor's Pick section (shows featured games + manually selected games)"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:546
+msgid "Editor's Pick Game IDs"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:547
+msgid ""
+"Enter comma-separated game post IDs to include in Editor's Pick (in addition "
+"to featured games)"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:553
+msgid "Seasonal Section"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:554
+msgid "Enable Seasonal section"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:561
+#, fuzzy
+#| msgid "Search Themes"
+msgid "Seasonal Theme"
+msgstr "Chercher Thèmes"
+
+#: admin/class-slotslaunch-settings.php:562
+msgid "Select the theme slug for seasonal section (e.g., \"christmas\")"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:568
+msgid "Newest Games Section"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:569
+msgid "Enable Newest Games section"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:576
+msgid "Most Played Section"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:577
+msgid "Enable Most Played section"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:584
+msgid "Top Rated Section"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:585
+msgid "Enable Top Rated section"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:592
+msgid "Trending Games Section"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:593
+msgid "Enable Trending Games section"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:600
+msgid "Licensed Games Section"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:601
+msgid "Enable Licensed Games section (games with \"licensed\" theme)"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:608
+msgid "Gold Medal Games Section"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:609
+msgid "Enable Gold Medal Games section"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:627
+msgid "Delete all data on Uninstall"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:628
+msgid ""
+"When you uninstall the plugin all slots, settings, etc will be deleted from "
+"your db"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:634
+msgid "Reinstall all Slots"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:635
+msgid ""
+"WARNING: This will delete all your slots posts and reinstall everything from "
+"scratch."
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:638
+msgid "Reinstall"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:643
+#, fuzzy
+#| msgid "Import games From:"
+msgid "Import games from provider"
+msgstr "Importer des jeux depuis :"
+
+#: admin/class-slotslaunch-settings.php:644
+#, fuzzy
+#| msgid "Import all providers or just some of them"
+msgid ""
+"Import games from selected provider in case you installed just some of them"
+msgstr "Importer tous les fournisseurs ou seulement certains d'entre eux"
+
+#: admin/class-slotslaunch-settings.php:652
+msgid "Debug"
+msgstr ""
+
+#: admin/class-slotslaunch-settings.php:653
+msgid "This will show latest errors produced by the importer"
+msgstr ""
+
+#: admin/class-slotslaunch-wizard.php:72 admin/class-slotslaunch-wizard.php:80
+#: includes/class-slotslaunch.php:60 includes/class-slotslaunch.php:68
+msgid "Cheatin&#8217; huh?"
+msgstr "Tricheur&#8217; hein?"
+
+#: admin/class-slotslaunch-wizard.php:109
+msgid "Import Games"
+msgstr "Importer des jeux"
+
+#: admin/class-slotslaunch-wizard.php:178
+msgid "Basic"
+msgstr "Basique"
+
+#: admin/includes/settings-api.php:71
+#, php-format
+msgid "The callback function used for the %s setting is missing."
+msgstr ""
+
+#: admin/includes/settings-api.php:105
+msgid "Verify Key"
+msgstr ""
+
+#: admin/includes/settings-api.php:160
+#, php-format
+msgid ""
+"To unlock all features consider <a href=\"%s\" target=\"_blank\" "
+"rel=\"noopener noreferrer\" class=\"slotsl-upgrade-modal\">upgrading to Pro</"
+"a>."
+msgstr ""
+"Pour débloquer toutes les fonctionnalités, envisagez de <a href=\"%s\" "
+"target=\"_blank\" rel=\"noopener noreferrer\" class=\"slotsl-upgrade-"
+"modal\">mettre à niveau vers Pro</a>."
+
+#: admin/includes/settings-api.php:400
+msgid "Upload Image"
+msgstr ""
+
+#: admin/includes/settings-api.php:441
+#, php-format
+msgid ""
+"To unlock all features consider <a href=\"%s\" target=\"_blank\" "
+"rel=\"noopener noreferrer\" class=\"slotsl-upgrade-modal\">upgrading to a "
+"Premium Plan</a>."
+msgstr ""
+"Pour débloquer toutes les fonctionnalités, envisagez de <a href=\"%s\" "
+"target=\"_blank\" rel=\"noopener noreferrer\" class=\"slotsl-upgrade-"
+"modal\">passer à un forfait Premium</a>."
+
+#: admin/includes/settings-api.php:472 templates/slotsl-lobby.php:20
+msgid "Editor's Pick"
+msgstr ""
+
+#: admin/includes/settings-api.php:473
+msgid "Seasonal"
+msgstr ""
+
+#: admin/includes/settings-api.php:474 templates/slotsl-lobby.php:30
+#, fuzzy
+#| msgid "Newest to Oldest"
+msgid "Newest Games"
+msgstr "Du plus récent au plus ancien"
+
+#: admin/includes/settings-api.php:475
+#: templates/partials/archives/slotsl-filters.php:42
+#: templates/slotsl-lobby.php:35
+msgid "Most Played"
+msgstr ""
+
+#: admin/includes/settings-api.php:476 templates/slotsl-lobby.php:40
+msgid "Top Rated"
+msgstr ""
+
+#: admin/includes/settings-api.php:477
+#: templates/partials/archives/slotsl-filters.php:43
+#: templates/slotsl-lobby.php:45
+msgid "Trending Games"
+msgstr ""
+
+#: admin/includes/settings-api.php:478 templates/slotsl-lobby.php:50
+msgid "Licensed Games"
+msgstr ""
+
+#: admin/includes/settings-api.php:479 templates/slotsl-lobby.php:55
+msgid "Gold Medal Games"
+msgstr ""
+
+#: admin/wizard/setup-wizard-basic.php:7
+msgid ""
+"Thanks for installing SlotsLaunch!! The wizard below will help you configure "
+"the plugin correctly."
+msgstr ""
+"Merci d'avoir installé SlotsLaunch !! L'assistant ci-dessous vous aidera à "
+"configurer correctement le plugin."
+
+#: admin/wizard/setup-wizard-basic.php:10
+msgid "Enter your API key"
+msgstr "Entrez votre clé API"
+
+#: admin/wizard/setup-wizard-basic.php:14
+msgid ""
+"Enter your api key in order to connect with the API and also get automatic "
+"updates"
+msgstr ""
+"Entrez votre clé API afin de vous connecter à l'API et également obtenir des "
+"mises à jour automatiques"
+
+#: admin/wizard/setup-wizard-basic.php:22
+msgid "Next"
+msgstr "Suivant"
+
+#: admin/wizard/setup-wizard-import.php:10
+msgid ""
+"Click the button below to import all games in the background. We will show "
+"an admin notice once the proccess is completed."
+msgstr ""
+"Cliquez sur le bouton ci-dessous pour importer tous les jeux en arrière-"
+"plan. Nous afficherons une notification une fois le processus terminé."
+
+#: admin/wizard/setup-wizard-import.php:13
+msgid "Import games From:"
+msgstr "Importer des jeux depuis :"
+
+#: admin/wizard/setup-wizard-import.php:15
+msgid "All providers"
+msgstr "Tous les fournisseurs"
+
+#: admin/wizard/setup-wizard-import.php:21
+msgid "Import all providers or just some of them"
+msgstr "Importer tous les fournisseurs ou seulement certains d'entre eux"
+
+#: admin/wizard/setup-wizard-import.php:36
+msgid "Import"
+msgstr "Importer"
+
+#: includes/class-slotslaunch-ajax.php:83
+#: public/class-slotslaunch-public.php:181
+#: templates/partials/archives/slotsl-thumb.php:16
+msgid "Try Demo"
+msgstr "Essayez la démo"
+
+#: includes/class-slotslaunch-ajax.php:130
+#: includes/class-slotslaunch-ajax.php:142
+msgid "Slot not found"
+msgstr "Jeu non trouvé"
+
+#: includes/class-slotslaunch-cpt.php:20 includes/class-slotslaunch-cpt.php:22
+#: templates/partials/single/slotsl-breadcrumbs.php:12
+#: templates/slotsl-lobby.php:199
+msgid "Slots"
+msgstr "Slots"
+
+#: includes/class-slotslaunch-cpt.php:21
+#, fuzzy
+#| msgid "Slots"
+msgid "Slot"
+msgstr "Slots"
+
+#: includes/class-slotslaunch-cpt.php:23
+msgid "Parent Slot"
+msgstr "Slot Parent"
+
+#: includes/class-slotslaunch-cpt.php:24
+msgid "All Slots"
+msgstr "Tous les jeux"
+
+#: includes/class-slotslaunch-cpt.php:25
+msgid "View Slot"
+msgstr "Voir la Slot"
+
+#: includes/class-slotslaunch-cpt.php:26
+msgid "Add New Slot"
+msgstr "Ajouter une nouvelle Slot"
+
+#: includes/class-slotslaunch-cpt.php:27
+msgid "Add New"
+msgstr "Ajouter Nouveau"
+
+#: includes/class-slotslaunch-cpt.php:28
+msgid "Edit Slot"
+msgstr "Editer une Slot"
+
+#: includes/class-slotslaunch-cpt.php:29
+msgid "Update Slot"
+msgstr "Mettre à jour une Slot"
+
+#: includes/class-slotslaunch-cpt.php:30
+msgid "Search Slot"
+msgstr "Chercher un jeu"
+
+#: includes/class-slotslaunch-cpt.php:31
+msgid "Not Found"
+msgstr "Introuvable"
+
+#: includes/class-slotslaunch-cpt.php:32
+msgid "Not found in Trash"
+msgstr "Introuvable dans la corbeille"
+
+#: includes/class-slotslaunch-cpt.php:38
+msgid "slots"
+msgstr "slots"
+
+#: includes/class-slotslaunch-cpt.php:39
+msgid "Slot news and reviews"
+msgstr "Actualités et revues de Slots"
+
+#: includes/class-slotslaunch-cpt.php:69 includes/class-slotslaunch-cpt.php:70
+#: includes/class-slotslaunch-cpt.php:79
+#: templates/partials/single/slotsl-game-attributes.php:12
+msgid "Provider"
+msgstr "Fournisseur"
+
+#: includes/class-slotslaunch-cpt.php:71
+#: templates/slotsl-provider-archives.php:11
+msgid "Search Providers"
+msgstr "Chercher Fournisseurs"
+
+#: includes/class-slotslaunch-cpt.php:73
+msgid "Parent Provider"
+msgstr "Fournisseur Parent"
+
+#: includes/class-slotslaunch-cpt.php:74
+msgid "Parent Provider:"
+msgstr "Fournisseur Parent:"
+
+#: includes/class-slotslaunch-cpt.php:75
+msgid "Edit Provider"
+msgstr "Editer Fournisseur"
+
+#: includes/class-slotslaunch-cpt.php:76
+msgid "Update Provider"
+msgstr "Mise à jour Fournisseur"
+
+#: includes/class-slotslaunch-cpt.php:77
+msgid "Add New Provider"
+msgstr "Ajouter un Fournisseur"
+
+#: includes/class-slotslaunch-cpt.php:78
+msgid "New Provider Name"
+msgstr "Nom nouveau Fournisseur"
+
+#: includes/class-slotslaunch-cpt.php:96 includes/class-slotslaunch-cpt.php:97
+#: includes/class-slotslaunch-cpt.php:106
+#: templates/partials/single/slotsl-game-attributes.php:14
+msgid "Theme"
+msgstr "Thème"
+
+#: includes/class-slotslaunch-cpt.php:98
+msgid "Search Themes"
+msgstr "Chercher Thèmes"
+
+#: includes/class-slotslaunch-cpt.php:100
+msgid "Parent Theme"
+msgstr "Thème Parent"
+
+#: includes/class-slotslaunch-cpt.php:101
+msgid "Parent Theme:"
+msgstr "Thème Parent:"
+
+#: includes/class-slotslaunch-cpt.php:102
+msgid "Edit Theme"
+msgstr "Editer Thème"
+
+#: includes/class-slotslaunch-cpt.php:103
+msgid "Update Theme"
+msgstr "Mise à jour Thème"
+
+#: includes/class-slotslaunch-cpt.php:104
+msgid "Add New Theme"
+msgstr "Ajouter un Thème"
+
+#: includes/class-slotslaunch-cpt.php:105
+msgid "New Theme Name"
+msgstr "Nom nouveau Thème"
+
+#: includes/class-slotslaunch-cpt.php:126
+#: includes/class-slotslaunch-cpt.php:127
+#: includes/class-slotslaunch-cpt.php:136
+#: templates/partials/single/slotsl-game-attributes.php:13
+msgid "Type"
+msgstr "Type"
+
+#: includes/class-slotslaunch-cpt.php:128
+msgid "Search Types"
+msgstr "Chercher Types"
+
+#: includes/class-slotslaunch-cpt.php:130
+msgid "Parent Type"
+msgstr "Type Parent"
+
+#: includes/class-slotslaunch-cpt.php:131
+msgid "Parent Type:"
+msgstr "Type Parent:"
+
+#: includes/class-slotslaunch-cpt.php:132
+msgid "Edit Type"
+msgstr "Editer Type"
+
+#: includes/class-slotslaunch-cpt.php:133
+msgid "Update Type"
+msgstr "Mise à jour Type"
+
+#: includes/class-slotslaunch-cpt.php:134
+msgid "Add New Type"
+msgstr "Ajouter Type"
+
+#: includes/class-slotslaunch-cpt.php:135
+msgid "New Type Name"
+msgstr "Nom nouveau Type"
+
+#: includes/class-slotslaunch-cpt.php:154
+#: includes/class-slotslaunch-cpt.php:155
+#: includes/class-slotslaunch-cpt.php:164
+#: templates/partials/archives/slotsl-filters.php:56
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Abstract_ListTable.php:541
+msgid "Filter"
+msgstr "Filtre"
+
+#: includes/class-slotslaunch-cpt.php:156
+msgid "Search Filters"
+msgstr "Chercher Filtres"
+
+#: includes/class-slotslaunch-cpt.php:157
+msgid "All Filters"
+msgstr "Tous les filtres"
+
+#: includes/class-slotslaunch-cpt.php:158
+msgid "Parent Filter"
+msgstr "Filtre Parent"
+
+#: includes/class-slotslaunch-cpt.php:159
+msgid "Parent Filter:"
+msgstr "Filtre Parent:"
+
+#: includes/class-slotslaunch-cpt.php:160
+msgid "Edit Filter"
+msgstr "Editer Filtre"
+
+#: includes/class-slotslaunch-cpt.php:161
+msgid "Update Filter"
+msgstr "Mise à jour Filtre"
+
+#: includes/class-slotslaunch-cpt.php:162
+msgid "Add New Filter"
+msgstr "Ajouter Filtre"
+
+#: includes/class-slotslaunch-cpt.php:163
+msgid "New Filter Name"
+msgstr "Nom nouveau Filtre"
+
+#: includes/class-slotslaunch-license.php:18
+msgid "License is invalid, or not valid for the current host."
+msgstr "La licence n'est pas valide ou n'est pas valide pour l'hôte actuel."
+
+#: templates/partials/archives/slotsl-filters.php:6
+msgid "Search Slots"
+msgstr "Chercher un jeu"
+
+#: templates/partials/archives/slotsl-filters.php:38
+msgid "Sort By"
+msgstr "Trier par"
+
+#: templates/partials/archives/slotsl-filters.php:39
+msgid "A-Z"
+msgstr "De A à Z"
+
+#: templates/partials/archives/slotsl-filters.php:40
+msgid "Z-A"
+msgstr "De Z à A"
+
+#: templates/partials/archives/slotsl-filters.php:41
+msgid "Newest to Oldest"
+msgstr "Du plus récent au plus ancien"
+
+#: templates/partials/archives/slotsl-filters.php:44
+msgid "Most Rated"
+msgstr ""
+
+#: templates/partials/archives/slotsl-filters.php:45
+msgid "Highest Rated"
+msgstr ""
+
+#: templates/partials/archives/slotsl-filters.php:46
+#, fuzzy
+#| msgid "Import Games"
+msgid "Gold Games"
+msgstr "Importer des jeux"
+
+#: templates/partials/archives/slotsl-filters.php:47
+msgid "Silver Games"
+msgstr ""
+
+#: templates/partials/archives/slotsl-filters.php:48
+msgid "Bronze Games"
+msgstr ""
+
+#: templates/partials/archives/slotsl-pagination.php:6
+#, php-format
+msgid "You have viewed %s of %s games!"
+msgstr "Vous avez vu %s des %s jeux!"
+
+#: templates/partials/archives/slotsl-pagination.php:22
+#: templates/slotsl-provider-archives.php:148
+msgid "Load More"
+msgstr "Voir plus"
+
+#: templates/partials/single/slotsl-breadcrumbs.php:4
+msgid "Home"
+msgstr ""
+
+#: templates/partials/single/slotsl-broken-game-form.php:3
+#, fuzzy, php-format
+#| msgid "Having issues with \"%s\" ?"
+msgid "Having issues with <strong>%s</strong> ?"
+msgstr "Vous avez des problèmes avec \"%s\" ?"
+
+#: templates/partials/single/slotsl-broken-game-form.php:9
+msgid "Describe the issue here..."
+msgstr "Décrivez le problème ici..."
+
+#: templates/partials/single/slotsl-broken-game-form.php:13
+msgid "Submit"
+msgstr ""
+
+#: templates/partials/single/slotsl-featured-games-widget.php:28
+msgid "Try Our Featured Games"
+msgstr ""
+
+#: templates/partials/single/slotsl-fullscreen-button.php:2
+msgid "Close Full Screen"
+msgstr "Fermer plain écran"
+
+#: templates/partials/single/slotsl-game-attributes.php:15
+msgid "Release Date"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:16
+msgid "Reels"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:17
+msgid "Paylines"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:18
+msgid "RTP"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:19
+msgid "Volatility"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:20
+msgid "Currencies"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:21
+msgid "Languages"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:22
+msgid "Land Based"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:23
+msgid "Markets"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:24
+msgid "Progressive"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:25
+#, fuzzy
+#| msgid "Update Slot"
+msgid "Cluster Slot"
+msgstr "Mettre à jour une Slot"
+
+#: templates/partials/single/slotsl-game-attributes.php:26
+msgid "Scatter Pays"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:27
+msgid "Max Exposure"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:28
+msgid "Min Bet"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:29
+msgid "Max Bet"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:30
+msgid "Max Win per Spin"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:31
+msgid "Bonus Buy"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:32
+msgid "Autoplay"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:33
+msgid "Quickspin"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:34
+msgid "Tumbling Reels"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:35
+msgid "Increasing Multipliers"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:36
+msgid "Orientation"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:37
+msgid "Restrictions"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:83
+msgid "Game Information"
+msgstr ""
+
+#: templates/partials/single/slotsl-game-attributes.php:86
+#: templates/partials/single/slotsl-game-attributes.php:133
+#, fuzzy
+#| msgid "Load More"
+msgid "Show More"
+msgstr "Voir plus"
+
+#: templates/partials/single/slotsl-game-attributes.php:136
+msgid "Show Less"
+msgstr ""
+
+#: templates/partials/single/slotsl-header.php:4
+msgid "Report an issue with this game"
+msgstr "Signaler un problème avec ce jeu"
+
+#: templates/partials/single/slotsl-header.php:13
+msgid "Go Full Screen"
+msgstr "Activer plein écran"
+
+#: templates/partials/single/slotsl-header.php:37
+msgid "Rate Game"
+msgstr ""
+
+#: templates/partials/single/slotsl-header.php:43
+msgid "Votes"
+msgstr ""
+
+#: templates/slotsl-game-archives.php:46
+msgid "No Slots found"
+msgstr "Aucun jeu trouvé"
+
+#: templates/slotsl-lobby.php:201
+#, fuzzy
+#| msgid "Search Slots"
+msgid "Seasonal Slots"
+msgstr "Chercher un jeu"
+
+#: templates/slotsl-lobby.php:377
+msgid "See All"
+msgstr ""
+
+#: templates/slotsl-provider-archives.php:121
+msgid "No Providers found"
+msgstr "Aucun fournisseur trouvé"
+
+#: templates/slotsl-provider-archives.php:132
+#, fuzzy, php-format
+#| msgid "All providers"
+msgid "%s of %s providers!"
+msgstr "Tous les fournisseurs"
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ActionFactory.php:233
+msgid "Invalid action - must be a recurring action."
+msgstr "Action invalide : il doit s'agir d'une action récurrente."
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ActionFactory.php:324
+#, php-format
+msgid "Caught exception while enqueuing action \"%1$s\": %2$s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:60
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:75
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:76
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:89
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:19
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:30
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:32
+msgid "Scheduled Actions"
+msgstr "Actions planifiées"
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:225
+msgid "About"
+msgstr "À propos"
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:228
+#, php-format
+msgid "About Action Scheduler %s"
+msgstr "À propos du planificateur d'actions %s"
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:230
+msgid ""
+"Action Scheduler is a scalable, traceable job queue for background "
+"processing large sets of actions. Action Scheduler works by triggering an "
+"action hook to run at some time in the future. Scheduled actions can also be "
+"scheduled to run on a recurring schedule."
+msgstr ""
+"Action Scheduler est une file d'attente de tâches évolutive et traçable pour "
+"le traitement en arrière-plan de grands ensembles d'actions. Action "
+"Scheduler fonctionne en déclenchant l’exécution d’un action hook à un moment "
+"donné dans le futur. Les actions planifiées peuvent également être "
+"programmées pour s'exécuter selon un calendrier récurrent."
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:238
+msgid "Columns"
+msgstr "Colonnes"
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:240
+msgid "Scheduled Action Columns"
+msgstr "Colonnes d'actions planifiées"
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:242
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:96
+msgid "Hook"
+msgstr "Hook"
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:242
+msgid "Name of the action hook that will be triggered."
+msgstr "Nom de l'action Hook qui sera déclenché."
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:243
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:97
+msgid "Status"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:243
+msgid "Action statuses are Pending, Complete, Canceled, Failed"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:244
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:98
+msgid "Arguments"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:244
+msgid "Optional data array passed to the action hook."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:245
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:99
+msgid "Group"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:245
+msgid "Optional action group."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:246
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:100
+msgid "Recurrence"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:246
+msgid "The action's schedule frequency."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:247
+msgid "Scheduled"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:247
+msgid "The date/time the action is/was scheduled to run."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:248
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:102
+msgid "Log"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_AdminView.php:248
+msgid "Activity log for the action."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_DataController.php:137
+msgid "Attempting to reduce used memory..."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_InvalidActionException.php:21
+#, php-format
+msgid "Action [%1$s] has an invalid schedule: %2$s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_InvalidActionException.php:40
+#, php-format
+msgid ""
+"Action [%1$s] has invalid arguments. It cannot be JSON decoded to an array. "
+"$args = %2$s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:92
+msgid "Delete"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:101
+msgid "Scheduled Date"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:122
+msgid "Claim ID"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:129
+msgid "Run"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:130
+msgid "Process the action now as if it were run as part of a queue"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:133
+msgid "Cancel"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:134
+msgid "Cancel the action now to avoid it being run in future"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:224
+msgid "Now!"
+msgstr "Maintenant!"
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:260
+#, php-format
+msgid "Every %s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:266
+msgid "Non-repeating"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:364
+msgid ""
+"It appears one or more database tables were missing. Attempting to re-create "
+"the missing table(s)."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:397
+#, php-format
+msgid ""
+"A new queue has begun processing. <a href=\"%s\">View actions in-progress "
+"&raquo;</a>"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:400
+#, php-format
+msgid "The next queue will begin processing in approximately %d seconds."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:421
+#, php-format
+msgid "Successfully executed action: %s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:425
+#, php-format
+msgid "Successfully canceled action: %s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:429
+#, php-format
+msgid "Successfully processed change for action: %s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:435
+#, php-format
+msgid "Could not process change for action: \"%1$s\" (ID: %2$d). Error: %3$s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:471
+msgid "async"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:485
+#, php-format
+msgid " (%s ago)"
+msgstr " (il y a %s)"
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:488
+#, php-format
+msgid " (%s)"
+msgstr " (%s)"
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:513
+#, php-format
+msgid "Action Scheduler was unable to delete action %1$d. Reason: %2$s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_ListTable.php:661
+msgid "Search hook, args and claim ID"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_QueueCleaner.php:60
+#, php-format
+msgid "It was not possible to determine a valid cut-off time: %s."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_QueueRunner.php:224
+msgid "Every minute"
+msgstr "Chaque minute"
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_WPCommentCleaner.php:103
+#, php-format
+msgid "This data will be deleted in %s."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_WPCommentCleaner.php:108
+#, php-format
+msgid ""
+"Action Scheduler has migrated data to custom tables; however, orphaned log "
+"entries exist in the WordPress Comments table. %1$s <a href=\"%2$s\">Learn "
+"more &raquo;</a>"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:111
+msgid "This section shows details of Action Scheduler."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_Clean_Command.php:105
+#, php-format
+msgid "There was an error deleting an action: %s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:33
+#: vendor/woocommerce/action-scheduler/classes/WP_CLI/ProgressBar.php:47
+#, php-format
+msgid "The %s class can only be run within WP CLI."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:59
+msgid ""
+"There are too many concurrent batches, but the run is forced to continue."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:61
+msgid "There are too many concurrent batches."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:113
+msgid "The claim has been lost. Aborting current batch."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:138
+#, php-format
+msgid "Started processing action %s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:155
+#, php-format
+msgid "Completed processing action %1$s with hook: %2$s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:170
+#, php-format
+msgid "Error processing action %1$s: %2$s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_Scheduler_command.php:30
+#, php-format
+msgid "Registered schema for %s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_Scheduler_command.php:188
+#, php-format
+msgid "There was an error running the action scheduler: %s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler.php:226
+#, php-format
+msgid "%s() was called before the Action Scheduler data store was initialized"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Abstract_ListTable.php:668
+#, php-format
+msgid "Search results for \"%s\""
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Abstract_ListTable.php:786
+#, fuzzy
+#| msgid "Search Slot"
+msgid "Search"
+msgstr "Chercher un jeu"
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Abstract_QueueRunner.php:155
+msgid ""
+"This action appears to be consistently failing. A new instance will not be "
+"scheduled."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:72
+msgid "action created"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:76
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBLogger.php:142
+msgid "action canceled"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:82
+#, php-format
+msgid "action started via %s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:84
+msgid "action started"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:92
+#, php-format
+msgid "action complete via %s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:94
+msgid "action complete"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:102
+#, php-format
+msgid "action failed via %1$s: %2$s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:105
+#, php-format
+msgid "action failed: %s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:112
+#, php-format
+msgid ""
+"action marked as failed after %s seconds. Unknown error occurred. Check "
+"server, PHP and database error logs to diagnose cause."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:118
+#, php-format
+msgid "unexpected shutdown: PHP Fatal error %1$s in %2$s on line %3$s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:123
+msgid "action reset"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:129
+#, php-format
+msgid "action ignored via %s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:131
+msgid "action ignored"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:146
+#, php-format
+msgid "There was a failure fetching this action: %s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:148
+msgid "There was a failure fetching this action"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:156
+#, php-format
+msgid "There was a failure scheduling the next instance of this action: %s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Store.php:330
+#, php-format
+msgid ""
+"ActionScheduler_Action::$args too long. To ensure the args column can be "
+"indexed, action args should not be more than %d characters when encoded as "
+"JSON."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Store.php:406
+msgid "Complete"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Store.php:407
+msgid "Pending"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Store.php:408
+msgid "In-progress"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Store.php:409
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostStatusRegistrar.php:36
+msgid "Failed"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/abstracts/ActionScheduler_Store.php:410
+msgid "Canceled"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/actions/ActionScheduler_Action.php:50
+#, php-format
+msgid ""
+"Scheduled action for %1$s will not be executed as no callbacks are "
+"registered."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:118
+msgid "Database error."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:126
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:49
+#: vendor/woocommerce/action-scheduler/classes/migration/ActionScheduler_DBStoreMigrator.php:45
+#, php-format
+msgid "Error saving action: %s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:396
+msgid "Invalid value for select or count parameter. Cannot query actions."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:454
+msgid ""
+"JSON partial matching not supported in your environment. Please check your "
+"MySQL/MariaDB version."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:471
+#, php-format
+msgid ""
+"The value type for the JSON partial matching is not supported. Must be "
+"either integer, boolean, double or string. %s type provided."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:492
+msgid "Unknown partial args matching value."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:653
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:515
+#, php-format
+msgid ""
+"Unidentified action %s: we were unable to cancel this action. It may may "
+"have been deleted by another process."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:746
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:534
+#, php-format
+msgid ""
+"Unidentified action %s: we were unable to delete this action. It may may "
+"have been deleted by another process."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:778
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:564
+#, php-format
+msgid ""
+"Unidentified action %s: we were unable to determine the date of this action. "
+"It may may have been deleted by another process."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:941
+msgid "unknown"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:947
+#, php-format
+msgid "Unable to claim actions. Database error: %s."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1045
+#, php-format
+msgid "Unable to release actions from claim id %d."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1089
+#, php-format
+msgid ""
+"Unidentified action %s: we were unable to mark this action as having failed. "
+"It may may have been deleted by another process."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1116
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:967
+#, php-format
+msgid "Unable to update the status of action %1$d to %2$s."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1148
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:987
+#, php-format
+msgid ""
+"Unidentified action %s: we were unable to mark this action as having "
+"completed. It may may have been deleted by another process."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1178
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:904
+msgid "Invalid action ID. No status found."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1180
+msgid "Unknown status found for action."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:101
+msgid "Unable to save action."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:318
+msgid "Invalid schedule. Cannot save action."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:696
+msgid "Unable to claim actions. Database error."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:717
+#, php-format
+msgid "The group \"%s\" does not exist."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:824
+#, php-format
+msgid "Unable to unlock claim %s. Database error."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:852
+#, php-format
+msgid "Unable to unlock claim on action %s. Database error."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:878
+#, php-format
+msgid "Unable to mark failure on action %s. Database error."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:1068
+#, php-format
+msgid ""
+"%s Support for strings longer than this will be removed in a future version."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostStatusRegistrar.php:51
+msgid "In-Progress"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:20
+msgid "Scheduled actions are hooks triggered on a certain date and time."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:31
+msgid "Scheduled Action"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:33
+msgid "Add"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:34
+msgid "Add New Scheduled Action"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:35
+msgid "Edit"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:36
+msgid "Edit Scheduled Action"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:37
+msgid "New Scheduled Action"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:38
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:39
+msgid "View Action"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:40
+msgid "Search Scheduled Actions"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:41
+msgid "No actions found"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:42
+msgid "No actions found in trash"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_TaxonomyRegistrar.php:14
+msgid "Action Group"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/migration/ActionMigrator.php:96
+#, php-format
+msgid "Unable to remove source migrated action %s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/migration/Config.php:52
+msgid "Source store must be configured before running a migration"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/migration/Config.php:74
+msgid "Source logger must be configured before running a migration"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/migration/Config.php:96
+msgid "Destination store must be configured before running a migration"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/migration/Config.php:118
+msgid "Destination logger must be configured before running a migration"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/migration/Controller.php:162
+msgid ""
+"Action Scheduler migration in progress. The list of scheduled actions may be "
+"incomplete."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/classes/migration/Runner.php:107
+#, php-format
+msgid "Migrated action with ID %1$d in %2$s to ID %3$d in %4$s"
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/functions.php:134
+#, php-format
+msgid "An integer was expected but \"%1$s\" (%2$s) was received."
+msgstr ""
+
+#: vendor/woocommerce/action-scheduler/functions.php:287
+#, php-format
+msgid "Caught exception while cancelling action \"%1$s\": %2$s"
+msgstr ""
+
+#~ msgid "Rate this free game"
+#~ msgstr "Évaluer ce jeu gratuit"
+
+#~ msgid "Let us know what went wrong:"
+#~ msgstr "Dites nous ce qui ne va pas:"

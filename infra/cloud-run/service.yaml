@@ -1,0 +1,86 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: slotstars-wordpress
+  namespace: "${GCP_PROJECT_ID}"
+  labels:
+    cloud.googleapis.com/location: "${GCP_REGION}"
+spec:
+  template:
+    metadata:
+      annotations:
+        run.googleapis.com/cloudsql-instances: "${GCP_PROJECT_ID}:${GCP_REGION}:${CLOUD_SQL_INSTANCE}"
+        run.googleapis.com/client-name: gcloud
+    spec:
+      serviceAccountName: "${SERVICE_ACCOUNT_EMAIL}"
+      containers:
+        - image: "${GCP_REGION}-docker.pkg.dev/${GCP_PROJECT_ID}/${ARTIFACT_REGISTRY_REPOSITORY}/${IMAGE_NAME}:${IMAGE_TAG}"
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: "1000m"
+              memory: "1024Mi"
+          env:
+            - name: WP_HOME
+              value: "https://cms.slotstars.fun"
+            - name: WP_SITEURL
+              value: "https://cms.slotstars.fun"
+            - name: DB_NAME
+              value: "${DB_NAME}"
+            - name: DB_USER
+              value: "${DB_USER}"
+            - name: DB_HOST
+              value: "localhost"
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: slotstars-db-password
+                  key: "latest"
+            - name: SLOTSTAR_BRIDGE_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: slotstars-bridge-secret
+                  key: "latest"
+            - name: WP_AUTH_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: slotstars-wp-auth-key
+                  key: "latest"
+            - name: WP_SECURE_AUTH_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: slotstars-wp-secure-auth-key
+                  key: "latest"
+            - name: WP_LOGGED_IN_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: slotstars-wp-logged-in-key
+                  key: "latest"
+            - name: WP_NONCE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: slotstars-wp-nonce-key
+                  key: "latest"
+            - name: WP_AUTH_SALT
+              valueFrom:
+                secretKeyRef:
+                  name: slotstars-wp-auth-salt
+                  key: "latest"
+            - name: WP_SECURE_AUTH_SALT
+              valueFrom:
+                secretKeyRef:
+                  name: slotstars-wp-secure-auth-salt
+                  key: "latest"
+            - name: WP_LOGGED_IN_SALT
+              valueFrom:
+                secretKeyRef:
+                  name: slotstars-wp-logged-in-salt
+                  key: "latest"
+            - name: WP_NONCE_SALT
+              valueFrom:
+                secretKeyRef:
+                  name: slotstars-wp-nonce-salt
+                  key: "latest"
+      containerConcurrency: 80
+      timeoutSeconds: 300

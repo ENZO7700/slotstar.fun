@@ -1,0 +1,32 @@
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "8080:80"
+    env_file:
+      - .env.docker
+    environment:
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST:-db:3306}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER:-slotstar}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD:-slotstar_dev_pass_987213}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME:-slotstar}
+    volumes:
+      - ./apps/wordpress/wp-content/plugins:/var/www/html/wp-content/plugins
+      - ./apps/wordpress/wp-content/themes:/var/www/html/wp-content/themes
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    env_file:
+      - .env.docker
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-slotstar_root_pass_654321}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-slotstar}
+      MYSQL_USER: ${MYSQL_USER:-slotstar}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-slotstar_dev_pass_987213}
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

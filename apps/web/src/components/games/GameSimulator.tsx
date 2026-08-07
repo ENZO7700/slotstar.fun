@@ -1,0 +1,88 @@
+'use client';
+
+import React, { useState } from 'react';
+import { GameImage } from './GameImage';
+import { Button } from '../ui/Button';
+
+interface GameSimulatorProps {
+  externalId: number;
+  gameName: string;
+  thumbnailSrc?: string | null;
+}
+
+export function GameSimulator({ externalId, gameName, thumbnailSrc }: GameSimulatorProps) {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [embedUrl, setEmbedUrl] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  const handlePlayDemo = async () => {
+    setIsLoading(true);
+    setErrorMsg(null);
+    try {
+      const res = await fetch(`/api/play?id=${externalId}`);
+      if (!res.ok) {
+        const errData = await res.json();
+        throw new Error(errData.error || 'Nepodarilo sa spustiť demo verziu.');
+      }
+      const data = await res.json();
+      setEmbedUrl(data.embedUrl);
+      setIsPlaying(true);
+    } catch (err: unknown) {
+      setErrorMsg(err instanceof Error ? err.message : 'Chyba pri pripájaní k serveru.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  if (isPlaying && embedUrl) {
+    return (
+      <iframe
+        src={embedUrl}
+        className="w-full h-full border-0 rounded-xl"
+        allowFullScreen
+        scrolling="no"
+        title={`${gameName} Demo Play`}
+      />
+    );
+  }
+
+  return (
+    <div className="relative w-full h-full bg-zinc-950 flex flex-col items-center justify-center overflow-hidden rounded-xl group border border-zinc-900">
+      {/* Blurred background thumbnail */}
+      {thumbnailSrc && (
+        <div className="absolute inset-0 opacity-40 filter blur-md scale-105 pointer-events-none">
+          <GameImage src={thumbnailSrc} alt={gameName} />
+        </div>
+      )}
+
+      {/* Centered CTA overlay content */}
+      <div className="relative z-10 flex flex-col items-center text-center p-6 space-y-4 max-w-sm">
+        <span className="text-[10px] text-amber-500 font-bold uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+          Bezplatná Demo Hra
+        </span>
+        <h3 className="text-xl font-black text-zinc-100 tracking-tight">{gameName}</h3>
+        
+        {errorMsg ? (
+          <p className="text-xs text-red-400 font-semibold bg-red-950/40 border border-red-900/30 p-2.5 rounded-lg">
+            {errorMsg}
+          </p>
+        ) : (
+          <p className="text-xs text-zinc-400 leading-relaxed">
+            Hrajte bez rizika a registrácie. Kliknutím na tlačidlo nižšie spustíte oficiálnu demo verziu.
+          </p>
+        )}
+
+        <Button
+          onClick={handlePlayDemo}
+          disabled={isLoading}
+          variant="primary"
+          size="lg"
+          className="shadow-lg shadow-amber-500/15 min-w-[160px]"
+        >
+          {isLoading ? 'Načítavam...' : 'Hrať zadarmo'}
+        </Button>
+      </div>
+    </div>
+  );
+}

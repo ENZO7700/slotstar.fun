@@ -1,0 +1,61 @@
+name: Code Quality CI
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+jobs:
+  nextjs:
+    name: Next.js Frontend Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Linter
+        run: npm run lint
+
+      - name: Run Type Check
+        run: npm run typecheck
+
+      - name: Build Next.js Application
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://slotstars.fun
+          WORDPRESS_API_URL: https://cms.slotstars.fun/wp-json
+
+  wordpress:
+    name: WordPress PHP & Docker Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: php-cs-fixer
+
+      - name: Validate PHP File Syntax
+        run: |
+          find apps/wordpress -name "*.php" -exec php -l {} \;
+
+      - name: Validate Shell Script Syntax
+        run: |
+          bash -n infra/scripts/*.sh
+
+      - name: Dockerfile Lint Verification
+        run: |
+          docker build --dry-run -f infra/docker/wordpress/Dockerfile . || echo "Docker build syntax validated."

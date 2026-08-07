@@ -1,0 +1,64 @@
+name: Deploy WordPress to Cloud Run
+
+# Manually triggered workflow template (prepared, do not run automatically)
+on:
+  workflow_dispatch:
+    inputs:
+      gcp_project_id:
+        description: 'Google Cloud Project ID'
+        required: true
+      gcp_region:
+        description: 'Google Cloud Region'
+        required: true
+        default: 'europe-west3'
+      image_tag:
+        description: 'Image tag to deploy'
+        required: true
+        default: 'latest'
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy:
+    name: Build & Deploy to Cloud Run
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Workload Identity Federation Authentication
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: 'projects/${{ secrets.GCP_PROJECT_NUMBER }}/locations/global/workloadIdentityPools/${{ secrets.GCP_WIP_POOL }}/providers/${{ secrets.GCP_WIP_PROVIDER }}'
+          service_account: '${{ secrets.GCP_SA_EMAIL }}'
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: ${{ github.event.inputs.gcp_project_id }}
+
+      - name: Configure Docker Credentials
+        run: |
+          gcloud auth configure-docker "${{ github.event.inputs.gcp_region }}-docker.pkg.dev" --quiet
+
+      - name: Build and Push Custom WordPress Image
+        env:
+          GCP_PROJECT_ID: ${{ github.event.inputs.gcp_project_id }}
+          GCP_REGION: ${{ github.event.inputs.gcp_region }}
+          IMAGE_TAG: ${{ github.event.inputs.image_tag }}
+        run: |
+          ./infra/scripts/build-wordpress-image.sh
+
+      - name: Substitute and Deploy to Cloud Run
+        env:
+          GCP_PROJECT_ID: ${{ github.event.inputs.gcp_project_id }}
+          GCP_REGION: ${{ github.event.inputs.gcp_region }}
+          IMAGE_TAG: ${{ github.event.inputs.image_tag }}
+          CLOUD_SQL_INSTANCE: ${{ secrets.CLOUD_SQL_INSTANCE }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          DB_USER: ${{ secrets.DB_USER }}
+        run: |
+          ./infra/scripts/deploy-wordpress.sh

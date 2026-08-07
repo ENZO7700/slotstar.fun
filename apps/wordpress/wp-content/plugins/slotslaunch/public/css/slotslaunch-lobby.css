@@ -1,0 +1,517 @@
+/**
+ * Netflix-style Lobby CSS
+ * Full-width, theme-independent styling
+ */
+
+/* Full-width wrapper - fills container */
+.slotsl-lobby-wrapper {
+	position: relative;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	background: #fff;
+	z-index: 1;
+	clear: both;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+    min-width: 100%;
+}
+
+/* Reset common theme styles */
+.slotsl-lobby-wrapper *,
+.slotsl-lobby-wrapper *::before,
+.slotsl-lobby-wrapper *::after {
+	box-sizing: border-box;
+}
+
+.slotsl-lobby {
+	padding: 40px 0;
+	max-width: 100%;
+	margin: 0;
+	width: 100%;
+	position: relative;
+	background: #fff;
+}
+
+/* Fill container width */
+.slotsl-lobby-wrapper .slotsl-lobby {
+	width: 100%;
+	max-width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+	float: none;
+	clear: both;
+}
+
+.slotsl-lobby-section {
+	margin-bottom: 50px;
+	width: 100%;
+	position: relative;
+}
+
+.slotsl-lobby-section:last-child {
+	margin-bottom: 0;
+}
+
+.slotsl-lobby-section-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	padding: 0 60px;
+	width: 100%;
+}
+
+.slotsl-lobby-section-title {
+	font-size: 1.75em;
+	font-weight: 600;
+	margin: 0;
+	padding: 0;
+	color: #333;
+	line-height: 1.2;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.slotsl-lobby-see-all {
+	color: #e23940;
+	text-decoration: none;
+	font-weight: 500;
+	transition: opacity 0.2s, text-decoration 0.2s;
+	font-size: 1em;
+	line-height: 1.2;
+}
+
+.slotsl-lobby-see-all:hover {
+	opacity: 0.8;
+	text-decoration: underline;
+}
+
+.slotsl-lobby-see-all:focus {
+	outline: 2px solid #e23940;
+	outline-offset: 2px;
+}
+
+.slotsl-lobby-slider {
+	position: relative;
+	padding: 0 60px;
+	width: 100%;
+}
+
+.slotsl-lobby-slider-container {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+    margin-left: -15px;
+}
+
+.slotsl-lobby-slider-track {
+	display: flex;
+	gap: 15px;
+	transition: transform 0.5s ease;
+	will-change: transform;
+	width: 100%;
+    padding-left: 15px;
+}
+
+.slotsl-lobby-item {
+	flex: 0 0 auto;
+	min-width: 280px;
+	max-width: 280px;
+	width: 280px;
+    margin-bottom: 15px;
+}
+
+.slotsl-lobby-item .slotsl-game {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	min-height: 330px;
+	background: #fff;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.slotsl-lobby-item .slotsl-game:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Reset any theme styles on game items */
+.slotsl-lobby-item .slotsl-game * {
+	box-sizing: border-box;
+}
+
+/* Ensure thumb takes consistent space */
+.slotsl-lobby-item .slotsl-thumb {
+	flex-shrink: 0;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.slotsl-lobby-item .slotsl-thumb img {
+	width: 100%;
+	height: auto;
+	display: block;
+	aspect-ratio: 3/2;
+	object-fit: cover;
+}
+
+/* Consistent meta section height */
+.slotsl-lobby-item .slotsl-meta {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 16px;
+	min-height: 120px;
+	position: relative;
+}
+
+/* Title with line clamping for consistent height */
+.slotsl-lobby-item .slotsl-meta .slotsl-title {
+	margin: 0 0 12px 0 !important;
+	padding: 0 !important;
+	line-height: 1.3 !important;
+	flex: 1;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	min-height: 2.6em;
+}
+
+.slotsl-lobby-item .slotsl-meta .slotsl-title a,
+.slotsl-lobby-item .slotsl-meta .slotsl-title span {
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	color: #333 !important;
+	line-height: 1.3 !important;
+	display: block;
+	text-decoration: none !important;
+}
+
+/* Provider positioning */
+.slotsl-lobby-item .slotsl-meta .slotsl-provider {
+	position: absolute !important;
+	bottom: 16px;
+	left: 16px;
+	margin: 0 !important;
+	font-size: 13px !important;
+	color: #666 !important;
+}
+
+/* Demo button styling in lobby */
+.slotsl-lobby-item .slotsl-demo-container {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	padding: 12px 16px;
+	background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+	opacity: 0;
+	transition: opacity 0.2s;
+	pointer-events: none;
+}
+
+.slotsl-lobby-item .slotsl-game:hover .slotsl-demo-container {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.slotsl-lobby-item .slotsl-demo-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.slotsl-lobby-item .slotsl-thumb-url {
+	background: #e23940 !important;
+	color: #fff !important;
+	font-weight: 600 !important;
+	border-radius: 6px !important;
+	padding: 10px 20px !important;
+	font-size: 14px !important;
+	text-decoration: none !important;
+	display: inline-block !important;
+	transition: background 0.2s !important;
+}
+
+.slotsl-lobby-item .slotsl-thumb-url:hover {
+	background: #c92d34 !important;
+	color: #fff !important;
+}
+
+.slotsl-lobby-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(0, 0, 0, 0.6);
+	border: none;
+	color: #fff;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+	transition: background 0.2s, opacity 0.2s;
+	opacity: 0;
+	padding: 0;
+	margin: 0;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slotsl-lobby-section:hover .slotsl-lobby-arrow {
+	opacity: 1;
+}
+
+.slotsl-lobby-arrow:hover {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.slotsl-lobby-arrow:active {
+	background: rgba(0, 0, 0, 0.9);
+}
+
+.slotsl-lobby-arrow:focus {
+	outline: 2px solid #fff;
+	outline-offset: 2px;
+}
+
+.slotsl-lobby-arrow-left {
+	left: 10px;
+}
+
+.slotsl-lobby-arrow-right {
+	right: 10px;
+}
+
+.slotsl-lobby-arrow svg {
+	width: 20px;
+	height: 20px;
+	display: block;
+	fill: none;
+	stroke: currentColor;
+}
+
+.slotsl-lobby-arrow:disabled {
+	opacity: 0.3;
+	cursor: not-allowed;
+	pointer-events: none;
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+	.slotsl-lobby-section-header {
+		padding: 0 50px;
+	}
+	
+	.slotsl-lobby-slider {
+		padding: 0 50px;
+	}
+}
+
+@media (max-width: 768px) {
+	.slotsl-lobby {
+		padding: 30px 0;
+	}
+	
+	.slotsl-lobby-section {
+		margin-bottom: 40px;
+	}
+	
+	.slotsl-lobby-section-header {
+		padding: 0 50px;
+	}
+	
+	.slotsl-lobby-section-title {
+		font-size: 1.5em;
+	}
+	
+	.slotsl-lobby-slider {
+		padding: 0 50px;
+	}
+	
+	.slotsl-lobby-item {
+		min-width: 220px;
+		max-width: 220px;
+		width: 220px;
+	}
+	
+	.slotsl-lobby-item .slotsl-game {
+		min-height: 340px;
+	}
+	
+	.slotsl-lobby-item .slotsl-meta {
+		min-height: 100px;
+		padding: 14px;
+	}
+	
+	.slotsl-lobby-item .slotsl-meta .slotsl-title {
+		min-height: 2.4em;
+	}
+	
+	.slotsl-lobby-item .slotsl-meta .slotsl-title a,
+	.slotsl-lobby-item .slotsl-meta .slotsl-title span {
+		font-size: 15px !important;
+	}
+	
+	.slotsl-lobby-arrow {
+		width: 35px;
+		height: 35px;
+		opacity: 0.7;
+	}
+	
+	.slotsl-lobby-arrow-left {
+		left: 5px;
+	}
+	
+	.slotsl-lobby-arrow-right {
+		right: 5px;
+	}
+	
+	.slotsl-lobby-arrow svg {
+		width: 18px;
+		height: 18px;
+	}
+}
+
+@media (max-width: 480px) {
+	.slotsl-lobby {
+		padding: 20px 0;
+	}
+	
+	.slotsl-lobby-section-header {
+		padding: 0 40px;
+	}
+	
+	.slotsl-lobby-section-title {
+		font-size: 1.25em;
+	}
+	
+	.slotsl-lobby-slider {
+		padding: 0 40px;
+	}
+	
+	.slotsl-lobby-item {
+		min-width: 180px;
+		max-width: 180px;
+		width: 180px;
+	}
+	
+	.slotsl-lobby-item .slotsl-game {
+		min-height: 300px;
+	}
+	
+	.slotsl-lobby-item .slotsl-meta {
+		min-height: 90px;
+		padding: 12px;
+	}
+	
+	.slotsl-lobby-item .slotsl-meta .slotsl-title {
+		min-height: 2.2em;
+	}
+	
+	.slotsl-lobby-item .slotsl-meta .slotsl-title a,
+	.slotsl-lobby-item .slotsl-meta .slotsl-title span {
+		font-size: 14px !important;
+	}
+	
+	.slotsl-lobby-arrow {
+		width: 30px;
+		height: 30px;
+	}
+	
+	.slotsl-lobby-arrow svg {
+		width: 16px;
+		height: 16px;
+	}
+}
+
+/* Touch scrolling support */
+.slotsl-lobby-slider-track {
+	-webkit-overflow-scrolling: touch;
+	scroll-behavior: smooth;
+}
+
+@media (hover: none) {
+	.slotsl-lobby-arrow {
+		opacity: 0.7;
+	}
+}
+
+/* Override common theme styles that might interfere */
+.slotsl-lobby-wrapper .slotsl-lobby-section h1,
+.slotsl-lobby-wrapper .slotsl-lobby-section h2,
+.slotsl-lobby-wrapper .slotsl-lobby-section h3,
+.slotsl-lobby-wrapper .slotsl-lobby-section h4,
+.slotsl-lobby-wrapper .slotsl-lobby-section h5,
+.slotsl-lobby-wrapper .slotsl-lobby-section h6 {
+	margin: 0;
+	padding: 0;
+	font-weight: 600;
+}
+
+.slotsl-lobby-wrapper a {
+	text-decoration: none;
+}
+
+.slotsl-lobby-wrapper button {
+	background: none;
+	border: none;
+	margin: 0;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+}
+
+/* Ensure images don't break layout */
+.slotsl-lobby-wrapper img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Prevent theme column layouts from affecting lobby */
+.slotsl-lobby-wrapper .slotsl-lobby,
+.slotsl-lobby-wrapper .slotsl-lobby-section,
+.slotsl-lobby-wrapper .slotsl-lobby-slider {
+	display: block !important;
+	width: 100% !important;
+	float: none !important;
+	clear: both !important;
+}
+
+/* Override common WordPress/theme styles */
+.slotsl-lobby-wrapper .slotsl-lobby-section {
+	page-break-inside: avoid;
+	break-inside: avoid;
+}
+
+/* Ensure consistent spacing */
+.slotsl-lobby-wrapper .slotsl-lobby-section-header,
+.slotsl-lobby-wrapper .slotsl-lobby-slider {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* Fill container width */
+.slotsl-lobby-wrapper,
+.slotsl-lobby-wrapper .slotsl-lobby,
+.slotsl-lobby-wrapper .slotsl-lobby-section {
+	max-width: 100%;
+	width: 100%;
+}
