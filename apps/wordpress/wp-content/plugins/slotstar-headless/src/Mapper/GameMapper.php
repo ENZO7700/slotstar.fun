@@ -104,6 +104,9 @@ class GameMapper {
 			}
 		}
 
+		$description = get_the_excerpt( $post_id );
+		$upcoming    = false;
+
 		return [
 			'id'            => (int) $post_id,
 			'externalId'    => $external_id,
@@ -126,3 +129,4 @@ class GameMapper {
 		];
 	}
 }
+
