@@ -1,7 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'slotstars.kestudio.sk',
+        pathname: '/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'slotstars.kestudio.sk',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

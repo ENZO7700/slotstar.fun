@@ -27,7 +27,16 @@ jobs:
         run: npm run lint
 
       - name: Run Type Check
-        run: npm run typecheck
+        run: npm run typecheck --prefix apps/web || npm run typecheck
+
+      - name: Run Unit Tests
+        run: npm run test --prefix apps/web || npm run test
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Run E2E Tests
+        run: npm run test:e2e --prefix apps/web || npm run test:e2e
 
       - name: Build Next.js Application
         run: npm run build

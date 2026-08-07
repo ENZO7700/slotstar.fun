@@ -13,6 +13,7 @@
     "dev": "npm run dev -w @slotstar/web",
     "build": "npm run build -w @slotstar/web",
     "lint": "npm run lint -w @slotstar/web",
-    "typecheck": "npm run typecheck -w @slotstar/web"
+    "typecheck": "npm run typecheck -w @slotstar/web",
+    "sync:images": "npm run sync:images -w @slotstar/web"
   }
 }

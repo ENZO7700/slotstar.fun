@@ -103,6 +103,15 @@ export async function getGames(params: GetGamesParams = {}): Promise<PaginatedRe
       return getMockGamesPaginated(params);
     }
 
+    // Overwrite remote image URLs with local optimized .webp paths
+    res.data = res.data.map(game => ({
+      ...game,
+      thumbnail: {
+        ...game.thumbnail,
+        src: `/images/games/${game.slug}.png`,
+      }
+    }));
+
     return res;
   } catch (err: unknown) {
     try {
@@ -139,7 +148,7 @@ interface WpPostItem {
             slug: gameSlug,
             canonicalPath: `/games/pragmatic-play/${gameSlug}`,
             thumbnail: {
-              src: `https://demogamesfree.pragmaticplay.net/gs2c/common/latest/common/thumbnail/en/${gameSlug}.png`,
+              src: `/images/games/${gameSlug}.png`,
               alt: post.title?.rendered || gameSlug,
             },
             provider: {
@@ -187,10 +196,19 @@ interface WpPostItem {
 
 export async function getGame(externalId: number): Promise<GameDetail> {
   try {
-    return await fetchApi(`/games/${externalId}`, GameSummarySchema, {
+    const game = await fetchApi(`/games/${externalId}`, GameSummarySchema, {
       revalidate: 300,
       tags: ['games', `game:${externalId}`],
     });
+    
+    // Overwrite remote image URL with local optimized .png path
+    return {
+      ...game,
+      thumbnail: {
+        ...game.thumbnail,
+        src: `/images/games/${game.slug}.webp`,
+      }
+    };
   } catch (err: unknown) {
     if (useFixtures) {
       const game = mockGames.find(g => g.externalId === externalId || g.id === externalId);
