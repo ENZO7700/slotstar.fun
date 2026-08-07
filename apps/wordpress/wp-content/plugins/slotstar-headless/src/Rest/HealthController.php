@@ -21,7 +21,11 @@ class HealthController {
 	}
 
 	public function get_health( \WP_REST_Request $request ): \WP_REST_Response {
+		if ( ! function_exists( 'is_plugin_active' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
 		$slotslaunch_active = is_plugin_active( 'slotslaunch/slotslaunch.php' );
+
 		
 		$games_count     = 0;
 		$providers_count = 0;
