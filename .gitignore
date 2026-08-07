@@ -43,3 +43,6 @@ pass-dtb.md
 build-dist/
 askpass.sh
 
+.vercel
+.env*
+*.zip
