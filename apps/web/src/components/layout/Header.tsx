@@ -33,12 +33,16 @@ export function Header() {
           <Icons.Search size={18} />
         </div>
         <input
+          id="site-search"
+          name="q"
           type="search"
           placeholder="Hľadať hry alebo poskytovateľov..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          autoComplete="off"
           className="w-full pl-10 pr-4 py-2 bg-zinc-900 border border-zinc-800 rounded-lg text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-amber-500 transition-colors"
         />
+
       </form>
 
       {/* Extra Action Area */}
