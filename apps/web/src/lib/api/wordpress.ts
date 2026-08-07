@@ -201,12 +201,11 @@ export async function getGame(externalId: number): Promise<GameDetail> {
       tags: ['games', `game:${externalId}`],
     });
     
-    // Overwrite remote image URL with local optimized .png path
     return {
       ...game,
       thumbnail: {
         ...game.thumbnail,
-        src: `/images/games/${game.slug}.webp`,
+        src: `/images/games/${game.slug}.png`,
       }
     };
   } catch (err: unknown) {
