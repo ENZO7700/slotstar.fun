@@ -98,6 +98,7 @@ export async function getGames(params: GetGamesParams = {}): Promise<PaginatedRe
       tags: ['games'],
     });
 
+
     if (res.data.length === 0 && useFixtures) {
       return getMockGamesPaginated(params);
     }
@@ -112,13 +113,24 @@ export async function getGames(params: GetGamesParams = {}): Promise<PaginatedRe
       wpUrl.searchParams.set('per_page', String(perPage));
       if (params.q) wpUrl.searchParams.set('search', params.q);
 
+interface WpPostItem {
+  id: number;
+  slug?: string;
+  date?: string;
+  modified?: string;
+  title?: { rendered?: string };
+  excerpt?: { rendered?: string };
+}
+
       const wpRes = await fetch(wpUrl.toString(), { next: { revalidate: 60 } });
       if (wpRes.ok) {
-        const posts = await wpRes.json();
+        const posts: WpPostItem[] = await wpRes.json();
         const totalItems = parseInt(wpRes.headers.get('X-WP-Total') || String(posts.length), 10);
         const totalPages = parseInt(wpRes.headers.get('X-WP-TotalPages') || '1', 10);
 
-        const data: GameSummary[] = posts.map((post: any, idx: number) => {
+        const data: GameSummary[] = posts.map((post, idx) => {
+
+
           const gameSlug = post.slug || `game-${post.id}`;
           return {
             id: post.id,
@@ -144,7 +156,8 @@ export async function getGames(params: GetGamesParams = {}): Promise<PaginatedRe
             volatility: 'High',
             featured: idx < 3,
             upcoming: false,
-            modifiedAt: post.modified || post.date,
+            modifiedAt: post.modified || post.date || new Date().toISOString(),
+
             embedUrl: `https://demogamesfree.pragmaticplay.net/gs2c/openGame.do?gameSymbol=${gameSlug}&jurisdictionID=99&cur=EUR&lobbyUrl=https://slotstar.fun`,
           };
         });
