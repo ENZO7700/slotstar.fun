@@ -28,7 +28,7 @@ export default async function UpcomingGamesPage() {
   return (
     <div className="space-y-8">
       {/* Hero Announcement Banner */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-amber-950/40 via-zinc-900 to-zinc-900 border border-amber-500/20 p-6 md:p-8">
+      <div className="relative overflow-hidden rounded-2xl bg-linear-to-r from-amber-950/40 via-zinc-900 to-zinc-900 border border-amber-500/20 p-6 md:p-8">
         <div className="relative z-10 max-w-2xl space-y-3">
           <span className="inline-flex items-center space-x-2 text-xs font-bold text-amber-500 uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
             <span>🔥</span>
