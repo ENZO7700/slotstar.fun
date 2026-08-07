@@ -12,17 +12,24 @@ export const mockProviders: Provider[] = [
 ];
 
 export const mockThemes: TaxonomyTerm[] = [
-  { id: 1, name: 'Egypt', slug: 'egypt' },
-  { id: 2, name: 'Ovocie', slug: 'fruit' },
-  { id: 3, name: 'Mytológia', slug: 'mythology' },
-  { id: 4, name: 'Knihy', slug: 'books' },
-  { id: 5, name: 'Kupovanie bonusu', slug: 'bonus-buy' }
+  { id: 1, name: 'Egypt & Pyramídy', slug: 'egypt' },
+  { id: 2, name: 'Ovocné Klasiky', slug: 'fruit' },
+  { id: 3, name: 'Mytológia & Bohovia', slug: 'mythology' },
+  { id: 4, name: 'Divoký Západ', slug: 'wild-west' },
+  { id: 5, name: 'Drahokamy & Diamanty', slug: 'gems' },
+  { id: 6, name: 'Dobrodružstvo', slug: 'adventure' },
+  { id: 7, name: 'Fantasy & Mágia', slug: 'fantasy' },
+  { id: 8, name: 'Zvieratá & Ryby', slug: 'animal' },
+  { id: 9, name: 'Sci-Fi & Vesmír', slug: 'scifi' },
+  { id: 10, name: 'Ázijské & Draky', slug: 'asian' }
 ];
 
 export const mockTypes: TaxonomyTerm[] = [
-  { id: 1, name: 'Video sloty', slug: 'video-slots' },
-  { id: 2, name: 'Klasické sloty', slug: 'classic-slots' },
-  { id: 3, name: 'Stolové hry', slug: 'table-games' }
+  { id: 1, name: 'Megaways™ Automaty', slug: 'megaways' },
+  { id: 2, name: 'Video Automaty', slug: 'video-slot' },
+  { id: 3, name: 'Klasické Automaty', slug: 'classic-slot' },
+  { id: 4, name: 'Jackpot Automaty', slug: 'jackpot' },
+  { id: 5, name: 'Bonus Buy Automaty', slug: 'bonus-buy' }
 ];
 
 export const mockGames: GameSummary[] = [
