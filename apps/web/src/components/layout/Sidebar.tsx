@@ -20,9 +20,9 @@ export function Sidebar() {
 
 
   return (
-    <aside className="hidden lg:flex flex-col w-60 bg-zinc-900 border-r border-zinc-800 fixed top-0 bottom-0 left-0 z-25">
+    <aside className="hidden lg:flex flex-col w-60 bg-zinc-900 border-r border-zinc-800 fixed top-0 bottom-0 left-0 z-30">
       {/* Brand Header */}
-      <div className="h-16 flex items-center px-6 border-b border-zinc-800">
+      <div className="h-16 flex items-center px-6 border-b border-zinc-800 shrink-0">
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-xl font-black tracking-tight text-amber-500">
             SLOT<span className="text-zinc-50 font-medium">STAR</span>
@@ -31,7 +31,7 @@ export function Sidebar() {
       </div>
 
       {/* Main Navigation */}
-      <nav className="flex-1 px-4 py-6 space-y-1">
+      <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
         {links.map((link) => {
           const Icon = link.icon;
           const isActive = pathname === link.href;

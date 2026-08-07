@@ -26,14 +26,26 @@ export default async function UpcomingGamesPage() {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col space-y-2">
-        <h1 className="text-2xl font-black tracking-tight text-zinc-50">Pripravované hry</h1>
-        <p className="text-sm text-zinc-500">
-          Tituly, ktoré budú čoskoro vydané a dostupné na hranie.
-        </p>
+    <div className="space-y-8">
+      {/* Hero Announcement Banner */}
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-amber-950/40 via-zinc-900 to-zinc-900 border border-amber-500/20 p-6 md:p-8">
+        <div className="relative z-10 max-w-2xl space-y-3">
+          <span className="inline-flex items-center space-x-2 text-xs font-bold text-amber-500 uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+            <span>🔥</span>
+            <span>Najočakávanejšie Novinky</span>
+          </span>
+          <h1 className="text-2xl md:text-3xl font-black tracking-tight text-zinc-50">
+            Pripravované automaty & novinky
+          </h1>
+          <p className="text-sm text-zinc-400 leading-relaxed">
+            Sledujte premiéry exkluzívnych slotov. Buďte medzi prvými, ktorí si vyskúšajú oficiálne demo verzie ihneď po ich globálnom vydaní.
+          </p>
+        </div>
+        {/* Subtle decorative glow in background */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full filter blur-3xl pointer-events-none" />
       </div>
 
+      {/* Main Grid */}
       {games.length === 0 ? (
         <div className="text-center py-12 text-zinc-500">
           Nenašli sa žiadne pripravované hry.

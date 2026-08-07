@@ -4,6 +4,8 @@ import { GameSummary } from '@/types/game';
 import { GameImage } from './GameImage';
 import { Badge } from '../ui/Badge';
 
+import { decodeHtmlEntities } from '@/lib/utils';
+
 interface GameCardProps {
   game: GameSummary;
   priority?: boolean;
@@ -23,7 +25,7 @@ export function GameCard({ game, priority = false }: GameCardProps) {
       <div className="relative aspect-4/3 w-full rounded-lg overflow-hidden border border-zinc-900 group-hover:border-zinc-800 transition-colors">
         <GameImage
           src={game.thumbnail.src}
-          alt={game.thumbnail.alt || game.name}
+          alt={decodeHtmlEntities(game.thumbnail.alt || game.name)}
           priority={priority}
         />
 
@@ -44,11 +46,11 @@ export function GameCard({ game, priority = false }: GameCardProps) {
       {/* Metadata Labels */}
       <div className="flex flex-col truncate px-1">
         <span className="text-sm font-semibold text-zinc-100 group-hover:text-amber-500 transition-colors truncate">
-          {game.name}
+          {decodeHtmlEntities(game.name)}
         </span>
         {game.provider && (
-          <span className="text-xs text-zinc-500 truncate">
-            {game.provider.name}
+          <span className="text-xs text-amber-500/80 font-medium truncate">
+            {decodeHtmlEntities(game.provider.name)}
           </span>
         )}
       </div>

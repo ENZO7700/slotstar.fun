@@ -15,12 +15,12 @@ export function AppShell({ children }: AppShellProps) {
       <Sidebar />
 
       {/* Main Layout Area */}
-      <div className="flex flex-col flex-1 lg:pl-[240px]">
+      <div className="flex flex-col flex-1 lg:pl-60 min-w-0">
         {/* Sticky Top Header */}
         <Header />
 
         {/* Dense content viewport wrapper */}
-        <main className="flex-1 w-full max-w-[1440px] mx-auto px-4 sm:px-6 py-6 pb-24 lg:pb-8">
+        <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6 pb-24 lg:pb-8">
           {children}
         </main>
 
