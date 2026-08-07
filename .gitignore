@@ -37,3 +37,9 @@ apps/wordpress/wp-content/uploads/
 apps/wordpress/wp-content/upgrade/
 apps/wordpress/wp-content/cache/
 apps/wordpress/wp-content/blogs.dir/
+
+# Local credentials and build artifacts
+pass-dtb.md
+build-dist/
+askpass.sh
+
