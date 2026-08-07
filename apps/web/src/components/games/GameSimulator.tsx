@@ -79,7 +79,7 @@ export function GameSimulator({ externalId, gameName, thumbnailSrc }: GameSimula
             disabled={isLoading}
             variant="primary"
             size="lg"
-            className="shadow-lg shadow-amber-500/15 w-full sm:w-auto min-w-[150px]"
+            className="shadow-lg shadow-amber-500/15 w-full sm:w-auto min-w-37.5"
           >
             {isLoading ? 'Načítavam...' : 'Hrať zadarmo'}
           </Button>
@@ -88,7 +88,7 @@ export function GameSimulator({ externalId, gameName, thumbnailSrc }: GameSimula
             href="https://slotstar.fun"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto min-w-[150px] inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-xs font-bold bg-emerald-500 text-zinc-950 hover:bg-emerald-400 shadow-lg shadow-emerald-500/20 transition-all border border-emerald-400/30"
+            className="w-full sm:w-auto min-w-37.5 inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-xs font-bold bg-emerald-500 text-zinc-950 hover:bg-emerald-400 shadow-lg shadow-emerald-500/20 transition-all border border-emerald-400/30"
           >
             <span>💰 Hrať o peniaze</span>
           </a>
