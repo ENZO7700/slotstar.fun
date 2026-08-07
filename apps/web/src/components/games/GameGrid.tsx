@@ -9,8 +9,8 @@ interface GameGridProps {
 export function GameGrid({ games }: GameGridProps) {
   return (
     <div className="game-grid">
-      {games.map((game) => (
-        <GameCard key={game.id} game={game} />
+      {games.map((game, index) => (
+        <GameCard key={game.id} game={game} priority={index < 4} />
       ))}
     </div>
   );

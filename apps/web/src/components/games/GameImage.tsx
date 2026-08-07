@@ -7,9 +7,10 @@ interface GameImageProps {
   src: string | null | undefined;
   alt: string;
   className?: string;
+  priority?: boolean;
 }
 
-export function GameImage({ src, alt, className = '' }: GameImageProps) {
+export function GameImage({ src, alt, className = '', priority = false }: GameImageProps) {
   const [error, setError] = useState(false);
 
   // If no source or error happens, display a clean fallback placeholder card
@@ -31,6 +32,7 @@ export function GameImage({ src, alt, className = '' }: GameImageProps) {
         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
         className="object-cover transition-transform duration-300 hover:scale-105"
         onError={() => setError(true)}
+        priority={priority}
       />
     </div>
   );

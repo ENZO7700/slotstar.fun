@@ -10,23 +10,23 @@ export function Footer() {
           <span className="text-lg font-black tracking-tight text-amber-500">
             SLOT<span className="text-zinc-50 font-medium">STAR</span>
           </span>
-          <p className="text-xs text-zinc-500 leading-relaxed">
+          <p className="text-xs text-zinc-400 leading-relaxed">
             SlotStars.fun je moderná platforma na objavovanie a bezplatné testovanie demo kasíno hier a poskytovateľov.
           </p>
         </div>
 
         {/* Responsible Gaming Notice */}
         <div className="space-y-3">
-          <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">Zodpovedné hranie</h4>
-          <p className="text-xs text-zinc-500 leading-relaxed">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">Zodpovedné hranie</h2>
+          <p className="text-xs text-zinc-400 leading-relaxed">
             Všetky demo hry na tejto stránke sú určené výhradne na zábavné účely a simulované testovanie. Hranie demo verzií nepredstavuje reálne stávky ani výhry. Hrajte zodpovedne.
           </p>
         </div>
 
         {/* Links Column */}
         <div className="space-y-3">
-          <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">Odkazy</h4>
-          <ul className="text-xs text-zinc-500 space-y-2">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">Odkazy</h2>
+          <ul className="text-xs text-zinc-400 space-y-2">
             <li>
               <Link href="/blog" className="hover:underline hover:text-zinc-300">
                 Blog

@@ -11,12 +11,12 @@ export function GameRail({ games }: GameRailProps) {
     <div className="relative w-full">
       {/* Horizontal snapping overflow scrollbar track wrapper */}
       <div className="flex space-x-4 overflow-x-auto py-2 scroll-smooth snap-x snap-mandatory">
-        {games.map((game) => (
+        {games.map((game, index) => (
           <div
             key={game.id}
             className="w-[160px] sm:w-[200px] shrink-0 snap-start"
           >
-            <GameCard game={game} />
+            <GameCard game={game} priority={index < 2} />
           </div>
         ))}
       </div>

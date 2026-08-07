@@ -6,9 +6,10 @@ import { Badge } from '../ui/Badge';
 
 interface GameCardProps {
   game: GameSummary;
+  priority?: boolean;
 }
 
-export function GameCard({ game }: GameCardProps) {
+export function GameCard({ game, priority = false }: GameCardProps) {
   // Compute badge flags based on metadata
   const isUpcoming = game.upcoming;
   const isFeatured = game.featured;
@@ -23,6 +24,7 @@ export function GameCard({ game }: GameCardProps) {
         <GameImage
           src={game.thumbnail.src}
           alt={game.thumbnail.alt || game.name}
+          priority={priority}
         />
 
         {/* Floating Badges */}
