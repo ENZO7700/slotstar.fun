@@ -4,5 +4,7 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"google.cloud.billingQuotaProject": "slotstars-504820"
+	}
 }
