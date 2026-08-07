@@ -26,8 +26,11 @@ export interface GetGamesParams {
   theme?: string;
   type?: string;
   filter?: string;
+  megaways?: boolean;
+  featured?: boolean;
+  upcoming?: boolean;
   order?: 'asc' | 'desc';
-  orderBy?: 'date' | 'name' | 'modified';
+  orderBy?: 'date' | 'name' | 'modified' | 'new' | 'most_played' | 'most_rated' | 'highest_rated' | 'trending' | 'gold' | 'silver' | 'bronze';
 }
 
 export interface GetProvidersParams {
@@ -87,6 +90,9 @@ export async function getGames(params: GetGamesParams = {}): Promise<PaginatedRe
     theme: params.theme,
     type: params.type,
     filter: params.filter,
+    megaways: params.megaways ? 'true' : undefined,
+    featured: params.featured ? 'true' : undefined,
+    upcoming: params.upcoming ? 'true' : undefined,
     order: params.order,
     order_by: params.orderBy,
   };

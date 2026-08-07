@@ -121,3 +121,33 @@ export const ApiErrorSchema = z.object({
     message: z.string(),
   }),
 });
+
+export const GetGamesOrderBySchema = z.enum([
+  'date',
+  'modified',
+  'title',
+  'name',
+  'new',
+  'most_played',
+  'most_rated',
+  'highest_rated',
+  'trending',
+  'gold',
+  'silver',
+  'bronze',
+]);
+
+export const GetGamesParamsSchema = z.object({
+  q: z.string().optional(),
+  page: z.number().optional(),
+  perPage: z.number().optional(),
+  provider: z.string().optional(),
+  theme: z.string().optional(),
+  type: z.string().optional(),
+  filter: z.string().optional(),
+  megaways: z.boolean().optional(),
+  orderBy: GetGamesOrderBySchema.optional(),
+  order: z.enum(['asc', 'desc', 'ASC', 'DESC']).optional(),
+  upcoming: z.boolean().optional(),
+  featured: z.boolean().optional(),
+});

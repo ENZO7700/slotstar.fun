@@ -14,6 +14,7 @@ export default async function Home() {
   let health = null;
   let newGames: GameSummary[] = [];
   let featuredGames: GameSummary[] = [];
+  let trendingGames: GameSummary[] = [];
   let topProviders: Provider[] = [];
   let errorMsg = null;
 
@@ -24,11 +25,14 @@ export default async function Home() {
     const newRes = await getGames({ perPage: 10, orderBy: 'date', order: 'desc' });
     newGames = newRes.data;
 
+    // Fetch Trending Hits (Slots Launch Shortcode order_by="trending")
+    const trendingRes = await getGames({ perPage: 10, orderBy: 'trending', order: 'desc' });
+    trendingGames = trendingRes.data.length > 0 ? trendingRes.data : newRes.data.slice(0, 6);
+
     // Fetch Featured Games
     const featuredRes = await getGames({ perPage: 10, orderBy: 'modified', order: 'desc' });
     featuredGames = featuredRes.data.filter(g => g.featured);
 
-    // If no explicit featured games exist, use fallback list
     if (featuredGames.length === 0) {
       featuredGames = featuredRes.data.slice(0, 6);
     }
@@ -77,44 +81,67 @@ export default async function Home() {
         <div className="hidden md:block w-72 h-72 bg-linear-to-tr from-amber-500/10 to-indigo-500/5 rounded-full filter blur-xl absolute -right-16 -top-16" />
       </section>
 
-      {/* Category Links Shortcut Grid */}
-      <section className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      {/* Slots Launch Lobby Category Links Shortcut Grid */}
+      <section className="grid grid-cols-2 sm:grid-cols-5 gap-3">
         <Link
-          href="/new-games"
-          className="p-4 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 rounded-xl text-center transition-colors"
+          href="/games?orderBy=trending"
+          className="p-4 bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 rounded-xl text-center transition-all group"
         >
-          <span className="block text-lg font-bold text-amber-500">Nové hry</span>
-          <span className="text-xs text-zinc-500">Čerstvé novinky v ponuke</span>
+          <span className="block text-lg font-black text-amber-500 group-hover:scale-105 transition-transform">🚀 Trending</span>
+          <span className="text-[11px] text-zinc-400">Najhranejšie hity</span>
         </Link>
         <Link
-          href="/featured"
-          className="p-4 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 rounded-xl text-center transition-colors"
+          href="/new-games"
+          className="p-4 bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 rounded-xl text-center transition-all group"
         >
-          <span className="block text-lg font-bold text-amber-500">Odporúčané</span>
-          <span className="text-xs text-zinc-500">Najobľúbenejšie automaty</span>
+          <span className="block text-lg font-black text-amber-500 group-hover:scale-105 transition-transform">🆕 Nové hry</span>
+          <span className="text-[11px] text-zinc-400">Čerstvé novinky</span>
+        </Link>
+        <Link
+          href="/games?orderBy=gold"
+          className="p-4 bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 rounded-xl text-center transition-all group"
+        >
+          <span className="block text-lg font-black text-amber-500 group-hover:scale-105 transition-transform">🏆 Gold Tier</span>
+          <span className="text-[11px] text-zinc-400">VIP kvalita automatov</span>
         </Link>
         <Link
           href="/upcoming"
-          className="p-4 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 rounded-xl text-center transition-colors"
+          className="p-4 bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 rounded-xl text-center transition-all group"
         >
-          <span className="block text-lg font-bold text-amber-500">Pripravované</span>
-          <span className="text-xs text-zinc-500">Exkluzívne nadchádzajúce tituly</span>
+          <span className="block text-lg font-black text-amber-500 group-hover:scale-105 transition-transform">🔮 Pripravované</span>
+          <span className="text-[11px] text-zinc-400">Exkluzívne premiéry</span>
         </Link>
         <Link
           href="/providers"
-          className="p-4 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 rounded-xl text-center transition-colors"
+          className="p-4 bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 rounded-xl text-center transition-all group col-span-2 sm:col-span-1"
         >
-          <span className="block text-lg font-bold text-amber-500">Poskytovatelia</span>
-          <span className="text-xs text-zinc-500">Všetky vývojárske štúdiá</span>
+          <span className="block text-lg font-black text-amber-500 group-hover:scale-105 transition-transform">🏢 Vývojári</span>
+          <span className="text-[11px] text-zinc-400">Poskytovatelia hier</span>
         </Link>
       </section>
+
+      {/* Trending Hits Rail Section */}
+      {trendingGames.length > 0 && (
+        <section className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <span className="text-lg">🚀</span>
+              <h2 className="text-xl font-bold tracking-tight text-zinc-100">Trending Hity</h2>
+            </div>
+            <Link href="/games?orderBy=trending" className="text-xs text-amber-500 hover:underline font-semibold">
+              Zobraziť všetky
+            </Link>
+          </div>
+          <GameRail games={trendingGames} />
+        </section>
+      )}
 
       {/* New Releases Rail Section */}
       {newGames.length > 0 && (
         <section className="space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold tracking-tight text-zinc-100">Najnovšie hry</h2>
-            <Link href="/new-games" className="text-xs text-amber-500 hover:underline">
+            <h2 className="text-xl font-bold tracking-tight text-zinc-100">Najnovšie pridané</h2>
+            <Link href="/new-games" className="text-xs text-amber-500 hover:underline font-semibold">
               Zobraziť všetky
             </Link>
           </div>
@@ -126,8 +153,8 @@ export default async function Home() {
       {featuredGames.length > 0 && (
         <section className="space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold tracking-tight text-zinc-100">Odporúčané hry</h2>
-            <Link href="/featured" className="text-xs text-amber-500 hover:underline">
+            <h2 className="text-xl font-bold tracking-tight text-zinc-100">Odporúčané automaty</h2>
+            <Link href="/featured" className="text-xs text-amber-500 hover:underline font-semibold">
               Zobraziť všetky
             </Link>
           </div>
@@ -140,7 +167,7 @@ export default async function Home() {
         <section className="space-y-6">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-bold tracking-tight text-zinc-100">Poprední poskytovatelia</h2>
-            <Link href="/providers" className="text-xs text-amber-500 hover:underline">
+            <Link href="/providers" className="text-xs text-amber-500 hover:underline font-semibold">
               Zobraziť všetkých
             </Link>
           </div>

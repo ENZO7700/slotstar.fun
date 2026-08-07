@@ -66,6 +66,80 @@ export function GameFilters({ providers, themes, types }: GameFiltersProps) {
 
   return (
     <div className="w-full bg-zinc-900 border border-zinc-800 rounded-xl p-4 mb-6">
+      {/* Quick Category Filter Pills */}
+      <div className="flex items-center space-x-2 overflow-x-auto pb-3 mb-3 border-b border-zinc-800 scrollbar-none">
+        <button
+          type="button"
+          onClick={() => {
+            const params = new URLSearchParams(searchParams.toString());
+            params.set('page', '1');
+            params.delete('orderBy');
+            router.push(`/games?${params.toString()}`);
+          }}
+          className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap ${
+            !searchParams.get('orderBy')
+              ? 'bg-amber-500 text-zinc-950 font-bold shadow-md'
+              : 'bg-zinc-950 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800 border border-zinc-800'
+          }`}
+        >
+          Všetky hry
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            const params = new URLSearchParams(searchParams.toString());
+            params.set('page', '1');
+            params.set('orderBy', 'trending');
+            params.set('order', 'desc');
+            router.push(`/games?${params.toString()}`);
+          }}
+          className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap flex items-center space-x-1.5 ${
+            searchParams.get('orderBy') === 'trending'
+              ? 'bg-amber-500 text-zinc-950 font-bold shadow-md'
+              : 'bg-zinc-950 text-amber-400 border border-amber-500/20 hover:bg-amber-500 hover:text-zinc-950'
+          }`}
+        >
+          <span>🚀</span>
+          <span>Trending</span>
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            const params = new URLSearchParams(searchParams.toString());
+            params.set('page', '1');
+            params.set('orderBy', 'most_played');
+            params.set('order', 'desc');
+            router.push(`/games?${params.toString()}`);
+          }}
+          className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap flex items-center space-x-1.5 ${
+            searchParams.get('orderBy') === 'most_played'
+              ? 'bg-amber-500 text-zinc-950 font-bold shadow-md'
+              : 'bg-zinc-950 text-zinc-400 hover:text-zinc-100 border border-zinc-800'
+          }`}
+        >
+          <span>🔥</span>
+          <span>Najhrajúcejšie</span>
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            const params = new URLSearchParams(searchParams.toString());
+            params.set('page', '1');
+            params.set('orderBy', 'gold');
+            params.set('order', 'desc');
+            router.push(`/games?${params.toString()}`);
+          }}
+          className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap flex items-center space-x-1.5 ${
+            searchParams.get('orderBy') === 'gold'
+              ? 'bg-amber-500 text-zinc-950 font-bold shadow-md'
+              : 'bg-zinc-950 text-zinc-400 hover:text-zinc-100 border border-zinc-800'
+          }`}
+        >
+          <span>🏆</span>
+          <span>Gold Tier</span>
+        </button>
+      </div>
+
       {/* Desktop Filter Panel Grid */}
       <div className="hidden md:grid grid-cols-5 gap-4">
         {/* Provider Select */}
@@ -131,10 +205,15 @@ export function GameFilters({ providers, themes, types }: GameFiltersProps) {
             }}
             className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100 focus:outline-none focus:border-amber-500"
           >
-            <option value="date-desc">Najnovšie</option>
+            <option value="trending-desc">🚀 Trending (Najpopulárnejšie)</option>
+            <option value="most_played-desc">🔥 Najhrajúcejšie</option>
+            <option value="highest_rated-desc">⭐ Najlepšie hodnotené</option>
+            <option value="gold-desc">🏆 Gold Tier (VIP)</option>
+            <option value="silver-desc">🥈 Silver Tier</option>
+            <option value="bronze-desc">🥉 Bronze Tier</option>
+            <option value="date-desc">Najnovšie pridané</option>
             <option value="name-asc">Názov A-Z</option>
             <option value="name-desc">Názov Z-A</option>
-            <option value="modified-desc">Nedávno upravené</option>
           </select>
         </div>
 
