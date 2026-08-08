@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getBlogPost, getBlogPosts } from '@/lib/api/wordpress';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
@@ -52,12 +53,14 @@ export default async function BlogPostPage({ params }: PageProps) {
 
       {/* Featured image */}
       {post.featuredImage && (
-        <div className="w-full aspect-video rounded-xl overflow-hidden border border-zinc-800">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+        <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-zinc-800">
+          <Image
             src={post.featuredImage}
             alt={post.title}
-            className="w-full h-full object-cover"
+            fill
+            sizes="(max-width: 768px) 100vw, 768px"
+            className="object-cover"
+            priority
           />
         </div>
       )}

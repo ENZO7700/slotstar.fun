@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getBlogPosts } from '@/lib/api/wordpress';
 import type { Metadata } from 'next';
 
@@ -57,12 +58,13 @@ export default async function BlogPage() {
               >
                 {/* Thumbnail */}
                 {post.featuredImage ? (
-                  <div className="aspect-video w-full overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                  <div className="relative aspect-video w-full overflow-hidden">
+                    <Image
                       src={post.featuredImage}
                       alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 ) : (
