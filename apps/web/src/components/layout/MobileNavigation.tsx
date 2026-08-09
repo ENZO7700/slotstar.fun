@@ -17,7 +17,7 @@ export function MobileNavigation() {
   ];
 
   return (
-    <nav className="lg:hidden fixed bottom-0 right-0 left-0 h-16 bg-zinc-900 border-t border-zinc-800 flex items-center justify-around px-2 pb-safe z-20">
+    <nav className="lg:hidden fixed bottom-0 right-0 left-0 h-17 bg-zinc-950/95 backdrop-blur-md border-t border-zinc-900 flex items-center justify-around px-2 pb-safe z-50">
       {items.map((item) => {
         const Icon = item.icon;
         const isActive = pathname === item.href;
@@ -26,12 +26,12 @@ export function MobileNavigation() {
           <Link
             key={item.href}
             href={item.href}
-            className={`flex flex-col items-center justify-center w-16 h-12 text-[10px] font-medium transition-colors ${
-              isActive ? 'text-amber-500 font-semibold' : 'text-zinc-500 hover:text-zinc-300'
+            className={`flex flex-col items-center justify-center min-w-12 min-h-12 px-2 py-1 transition-colors ${
+              isActive ? 'text-amber-500' : 'text-zinc-400 hover:text-zinc-200'
             }`}
           >
-            <Icon size={20} className="mb-0.5" />
-            {item.name}
+            <Icon size={22} className="mb-1" />
+            <span className="text-[11px] leading-none font-medium">{item.name}</span>
           </Link>
         );
       })}
