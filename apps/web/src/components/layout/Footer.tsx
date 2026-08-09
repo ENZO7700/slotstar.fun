@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { AffiliateButton } from '../ui/AffiliateComponents';
 
 export function Footer() {
   return (
@@ -46,6 +47,9 @@ export function Footer() {
               <Link href="/terms" className="hover:underline hover:text-zinc-300">
                 Všeobecné obchodné podmienky
               </Link>
+            </li>
+            <li className="pt-2">
+              <AffiliateButton label="🎰 Navštíviť kasíno →" variant="secondary" size="sm" />
             </li>
           </ul>
         </div>

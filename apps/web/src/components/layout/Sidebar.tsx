@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Icons } from '../ui/Icons';
+import { AffiliateSidebarCTA } from '../ui/AffiliateComponents';
 
 export function Sidebar() {
   const pathname = usePathname();
@@ -53,8 +54,11 @@ export function Sidebar() {
         })}
       </nav>
 
+      {/* Affiliate Promo Block */}
+      <AffiliateSidebarCTA />
+
       {/* Footer Info Area */}
-      <div className="p-4 border-t border-zinc-800 text-xs text-zinc-500 space-y-2">
+      <div className="p-4 border-t border-zinc-800 text-xs text-zinc-500 space-y-2 shrink-0">
         <Link href="/responsible-gaming" className="block hover:underline hover:text-zinc-300">
           Zodpovedné hranie
         </Link>

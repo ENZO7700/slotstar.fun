@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Icons } from '../ui/Icons';
+import { AffiliateButton } from '../ui/AffiliateComponents';
 
 export function Header() {
   const [query, setQuery] = useState('');
@@ -46,14 +47,15 @@ export function Header() {
       </form>
 
       {/* Extra Action Area */}
-      <div className="hidden sm:flex items-center space-x-4">
+      <div className="flex items-center space-x-4">
         <Link
           href="/responsible-gaming"
-          className="inline-flex items-center text-xs text-zinc-400 hover:text-zinc-200"
+          className="hidden md:inline-flex items-center text-xs text-zinc-400 hover:text-zinc-200"
         >
           <Icons.Shield size={14} className="mr-1 text-amber-500" />
           Zodpovedné hranie
         </Link>
+        <AffiliateButton label="💰 Získaj bonus" variant="primary" size="sm" />
       </div>
     </header>
   );

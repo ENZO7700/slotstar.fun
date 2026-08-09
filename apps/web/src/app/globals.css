@@ -1,47 +1,83 @@
 @import "tailwindcss";
 
 :root {
-  /* Design Tokens - Colors */
-  --background: #09090b;
-  --surface: #18181b;
-  --surface-elevated: #27272a;
-  --surface-hover: #3f3f46;
-  --border: #27272a;
-  --border-strong: #3f3f46;
+  /* ═══════════════════════════════════════════════════════
+     H4CK3D EDITION — DESIGN TOKEN SYSTEM
+     Single source of truth. No overrides. No exceptions.
+     ═══════════════════════════════════════════════════════ */
 
-  --text-primary: #fafafa;
-  --text-secondary: #d4d4d8;
-  --text-muted: #71717a;
+  /* COLORS — Brutalist palette. No pastels. No gradients. */
+  --color-void:           #000000; /* absolute black — primary background */
+  --color-void-soft:      #0a0a0a; /* near-black — panels, cards */
+  --color-void-raised:    #111111; /* elevated surfaces */
+  --color-concrete:       #b5b5b0; /* medium grey — secondary text */
+  --color-concrete-dark:  #747470; /* dark grey — muted / metadata */
+  --color-concrete-light: #dedbd3; /* light — borders on dark bg */
+  --color-blood:          #ff0033; /* blood red — primary accent */
+  --color-blood-dark:     #cc0029; /* blood hover */
+  --color-blood-dim:      #330009; /* blood surface tint */
+  --color-paper:          #dedbd3; /* off-white — light text on dark */
+  --color-ink:            #050505; /* near-black text on light bg */
+  --color-warning:        #ffd700; /* warning tape gold */
+  --color-warning-stripe: #1a1500; /* warning tape dark stripe */
 
-  --brand: #f59e0b; /* Amber 500 */
-  --brand-hover: #d97706; /* Amber 600 */
-  --accent: #6366f1; /* Indigo 500 */
+  /* SEMANTIC ALIASES — keep existing consumers working */
+  --background:       var(--color-void);
+  --surface:          var(--color-void-soft);
+  --surface-elevated: var(--color-void-raised);
+  --surface-hover:    #1a1a1a;
+  --border:           #222222;
+  --border-strong:    #333333;
+  --text-primary:     var(--color-paper);
+  --text-secondary:   var(--color-concrete);
+  --text-muted:       var(--color-concrete-dark);
+  --brand:            var(--color-blood);
+  --brand-hover:      var(--color-blood-dark);
+  --accent:           var(--color-blood);
+  --success:          #00cc66;
+  --warning:          var(--color-warning);
+  --danger:           var(--color-blood);
 
-  --success: #10b981;
-  --warning: #f59e0b;
-  --danger: #ef4444;
+  /* BORDERS — Brutalist. Hard edges only. */
+  --border-brutal:  8px;  /* primary brutalist border width */
+  --border-medium:  4px;  /* secondary border width */
+  --border-thin:    2px;  /* minimal border width */
 
-  /* Spacing */
+  /* RADIUS — Zero. No pills. No rounded cards. */
+  --radius:         0px;
+
+  /* SHADOWS — Hard offset only. No blur. No soft glow. */
+  --shadow-brutal-sm:  4px 4px 0 #000000;
+  --shadow-brutal-md:  8px 8px 0 #000000;
+  --shadow-brutal-lg:  12px 12px 0 #000000;
+  --shadow-brutal-xl:  16px 16px 0 #000000;
+  --shadow-blood-sm:   4px 4px 0 var(--color-blood);
+  --shadow-blood-md:   8px 8px 0 var(--color-blood);
+
+  /* TYPOGRAPHY */
+  --font-display:    'Archivo Black', system-ui, sans-serif;
+  --font-body:       var(--font-geist-sans, system-ui, sans-serif);
+  --font-mono:       var(--font-geist-mono, 'JetBrains Mono', monospace);
+
+  /* LAYOUT DIMENSIONS */
+  --sidebar-width:    240px;
+  --header-height:    72px;
+  --content-max:      1600px;
+  --max-content-width: 1600px; /* alias for legacy consumers */
+
+  /* SPACING */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
 
-  /* Layout dimensions */
-  --sidebar-width: 240px;
-  --header-height: 64px;
-  --max-content-width: 1440px;
+  /* TRANSITIONS — Snappy. No slow fades. */
+  --transition-fast:   100ms linear;
+  --transition-normal: 180ms ease-out;
 
-  /* Transitions */
-  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  /* Radius & Shadows */
-  --radius: 8px;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  /* ANIMATION — Brutal micro-interactions */
+  --shake-sm: brutal-shake-sm 0.15s ease-in-out;
 }
 
 * {

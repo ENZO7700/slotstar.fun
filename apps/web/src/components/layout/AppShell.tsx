@@ -3,6 +3,7 @@ import { Sidebar } from './Sidebar';
 import { Header } from './Header';
 import { MobileNavigation } from './MobileNavigation';
 import { Footer } from './Footer';
+import { AffiliateBanner, AffiliateFloatingButton } from '../ui/AffiliateComponents';
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -10,10 +11,12 @@ interface AppShellProps {
 
 export function AppShell({ children }: AppShellProps) {
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
-      {/* Grid Layout: Sidebar + Main Column — uses .app-shell-grid from globals.css
-          because Tailwind v4 cannot reliably parse var()+minmax() in one arbitrary value */}
-      <div className="app-shell-grid">
+    <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans flex flex-col">
+      {/* Top Banner — Everywhere user looks #1 */}
+      <AffiliateBanner />
+
+      {/* Grid Layout: Sidebar + Main Column */}
+      <div className="app-shell-grid flex-1">
         {/* Sticky Left Sidebar for Desktop - Grid Column 1 */}
         <div className="hidden lg:block">
           <Sidebar />
@@ -36,6 +39,9 @@ export function AppShell({ children }: AppShellProps) {
 
       {/* Bottom Sticky Tab bar for Mobile */}
       <MobileNavigation />
+
+      {/* Persistent Floating Affiliate CTA — Everywhere user looks #2 */}
+      <AffiliateFloatingButton />
     </div>
   );
 }
