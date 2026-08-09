@@ -29,10 +29,15 @@ export function GameCard({ game, priority = false }: GameCardProps) {
           priority={priority}
         />
 
-        {/* Floating Badges */}
+        {/* Floating Badges - Left Side */}
         <div className="absolute top-2 left-2 flex flex-col space-y-1 z-10">
           {isUpcoming && <Badge variant="warning">Pripravované</Badge>}
           {isFeatured && <Badge variant="brand">Odporúčané</Badge>}
+        </div>
+
+        {/* Floating Badges - Right Side (BONUS, etc.) */}
+        <div className="absolute top-2 right-2 flex flex-col space-y-1 z-10">
+          {game.technical?.bonusBuy && <Badge variant="success">Bonus</Badge>}
         </div>
 
         {/* Hover overlay CTA */}
@@ -44,15 +49,13 @@ export function GameCard({ game, priority = false }: GameCardProps) {
       </div>
 
       {/* Metadata Labels */}
-      <div className="flex flex-col truncate px-1">
+      <div className="flex flex-col truncate px-1 min-h-[3.5rem]">
         <span className="text-sm font-semibold text-zinc-100 group-hover:text-amber-500 transition-colors truncate">
           {decodeHtmlEntities(game.name)}
         </span>
-        {game.provider && (
-          <span className="text-xs text-amber-500/80 font-medium truncate">
-            {decodeHtmlEntities(game.provider.name)}
-          </span>
-        )}
+        <span className="text-xs text-amber-500/80 font-medium truncate">
+          {game.provider ? decodeHtmlEntities(game.provider.name) : 'Neznámy poskytovateľ'}
+        </span>
       </div>
     </Link>
   );
