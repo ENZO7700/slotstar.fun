@@ -119,6 +119,7 @@ export function NexusAdminProvider({
       switchRole: async (nextRole) => {
         await switchRoleAction(nextRole);
         setCurrentRole(nextRole);
+        // eslint-disable-next-line @next/next/no-location-assign-relative-destination
         window.location.href = "/admin";
       },
       creditBalance: async (playerId, amount, type, reason) => {
