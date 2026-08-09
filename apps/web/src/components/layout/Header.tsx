@@ -17,7 +17,7 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 h-16 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-900 flex items-center justify-between px-6 z-20">
+    <header className="sticky top-0 h-16 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-900 flex items-center justify-between px-6 z-10">
       {/* Brand logo visibility for mobile/tablet */}
       <div className="flex items-center lg:hidden">
         <Link href="/" className="flex items-center space-x-2">

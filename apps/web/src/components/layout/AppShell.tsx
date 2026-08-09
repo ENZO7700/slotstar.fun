@@ -11,8 +11,9 @@ interface AppShellProps {
 export function AppShell({ children }: AppShellProps) {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
-      {/* Grid Layout: Sidebar + Main Column */}
-      <div className="min-h-screen grid grid-cols-1 lg:grid-cols-[var(--sidebar-width),minmax(0,1fr)]">
+      {/* Grid Layout: Sidebar + Main Column — uses .app-shell-grid from globals.css
+          because Tailwind v4 cannot reliably parse var()+minmax() in one arbitrary value */}
+      <div className="app-shell-grid">
         {/* Sticky Left Sidebar for Desktop - Grid Column 1 */}
         <div className="hidden lg:block">
           <Sidebar />
@@ -24,7 +25,7 @@ export function AppShell({ children }: AppShellProps) {
           <Header />
 
           {/* Dense content viewport wrapper */}
-          <main className="flex-1 w-full max-w-(--max-content-width) mx-auto px-4 sm:px-6 md:px-8 py-6 pb-24 lg:pb-8">
+          <main className="flex-1 w-full min-w-0 px-4 sm:px-6 md:px-8 py-6 lg:pb-8">
             {children}
           </main>
 

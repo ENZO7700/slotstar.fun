@@ -8,6 +8,6 @@ test('homepage loads and shows hero section', async ({ page }) => {
   await expect(heading).toBeVisible();
 
   // Basic check that the navigation exists
-  const nav = page.locator('nav');
+  const nav = page.locator('nav').first();
   await expect(nav).toBeVisible();
 });

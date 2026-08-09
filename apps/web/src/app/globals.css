@@ -50,6 +50,31 @@
   padding: 0;
 }
 
+/* App Shell Grid — single source of truth for 2-column desktop layout.
+   Using plain CSS instead of Tailwind arbitrary value to ensure
+   var(--sidebar-width) + minmax(0,1fr) always resolves correctly. */
+.app-shell-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100dvh;
+}
+
+@media (min-width: 1024px) {
+  .app-shell-grid {
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  }
+}
+
+/* Mobile main content clearance for fixed bottom nav.
+   Specificity 0,1,1 > Tailwind single class 0,1,0 — always wins.
+   pb-24 (6rem=96px) in Tailwind classes conflicts with py-6 (padding-block shorthand)
+   in Tailwind v4 + Turbopack cascade; this rule ensures reliable clearance. */
+@media (max-width: 1023px) {
+  .app-shell-grid main {
+    padding-bottom: 6rem; /* 96px — clears 64px mobile nav + comfortable buffer */
+  }
+}
+
 body {
   background-color: var(--background);
   color: var(--text-primary);
@@ -57,6 +82,8 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Safety net: prevent accidental horizontal scroll from layout bugs */
+  overflow-x: hidden;
 }
 
 /* Scrollbar customization for dense casino look */
