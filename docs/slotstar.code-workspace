@@ -5,6 +5,8 @@
 		}
 	],
 	"settings": {
-		"google.cloud.billingQuotaProject": "slotstars-504820"
+		"google.cloud.billingQuotaProject": "slotstars-504820",
+		"python.defaultInterpreterPath": "python3",
+		"git.ignoreLimitWarning": true
 	}
 }
