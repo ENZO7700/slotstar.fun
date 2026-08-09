@@ -5,7 +5,7 @@ import { Icons } from '../ui/Icons';
 
 export function Footer() {
   return (
-    <footer className="relative w-full bg-zinc-950 border-t border-white/5 py-12 px-6 mt-auto overflow-hidden">
+    <footer className="relative w-full bg-zinc-950 border-t-[var(--border-brutal)] border-t-black py-12 px-6 mt-auto overflow-hidden">
       {/* Subtle Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-200 h-px bg-linear-to-r from-transparent via-amber-500/20 to-transparent"></div>
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-full max-w-150 h-50 bg-amber-500/5 blur-[100px] rounded-full pointer-events-none"></div>

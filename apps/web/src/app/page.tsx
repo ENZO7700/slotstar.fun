@@ -51,7 +51,7 @@ export default async function Home() {
   return (
     <div className="space-y-12">
       {/* Compact Branded Hero Section */}
-      <section className="relative w-full bg-zinc-900 border border-zinc-800 rounded-2xl p-8 md:p-12 overflow-hidden flex flex-col md:flex-row md:items-center justify-between">
+      <section className="relative w-full bg-zinc-900 border-[var(--border-brutal)] border-black rounded-2xl p-8 md:p-12 overflow-hidden flex flex-col md:flex-row md:items-center justify-between">
         <div className="space-y-4 max-w-xl z-10">
           <span className="inline-block bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
             Premium Casino Catalogue
@@ -85,35 +85,35 @@ export default async function Home() {
       <section className="grid grid-cols-2 sm:grid-cols-5 gap-3">
         <Link
           href="/games?orderBy=trending"
-          className="p-4 bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 rounded-xl text-center transition-all group"
+          className="p-4 bg-zinc-900 border-[var(--border-brutal)] border-black hover:border-amber-500/50 rounded-xl text-center transition-all group"
         >
           <span className="block text-lg font-black text-amber-500 group-hover:scale-105 transition-transform">🚀 Trending</span>
           <span className="text-[11px] text-zinc-400">Najhranejšie hity</span>
         </Link>
         <Link
           href="/new-games"
-          className="p-4 bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 rounded-xl text-center transition-all group"
+          className="p-4 bg-zinc-900 border-[var(--border-brutal)] border-black hover:border-amber-500/50 rounded-xl text-center transition-all group"
         >
           <span className="block text-lg font-black text-amber-500 group-hover:scale-105 transition-transform">🆕 Nové hry</span>
           <span className="text-[11px] text-zinc-400">Čerstvé novinky</span>
         </Link>
         <Link
           href="/games?orderBy=gold"
-          className="p-4 bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 rounded-xl text-center transition-all group"
+          className="p-4 bg-zinc-900 border-[var(--border-brutal)] border-black hover:border-amber-500/50 rounded-xl text-center transition-all group"
         >
           <span className="block text-lg font-black text-amber-500 group-hover:scale-105 transition-transform">🏆 Gold Tier</span>
           <span className="text-[11px] text-zinc-400">VIP kvalita automatov</span>
         </Link>
         <Link
           href="/upcoming"
-          className="p-4 bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 rounded-xl text-center transition-all group"
+          className="p-4 bg-zinc-900 border-[var(--border-brutal)] border-black hover:border-amber-500/50 rounded-xl text-center transition-all group"
         >
           <span className="block text-lg font-black text-amber-500 group-hover:scale-105 transition-transform">🔮 Pripravované</span>
           <span className="text-[11px] text-zinc-400">Exkluzívne premiéry</span>
         </Link>
         <Link
           href="/providers"
-          className="p-4 bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 rounded-xl text-center transition-all group col-span-2 sm:col-span-1"
+          className="p-4 bg-zinc-900 border-[var(--border-brutal)] border-black hover:border-amber-500/50 rounded-xl text-center transition-all group col-span-2 sm:col-span-1"
         >
           <span className="block text-lg font-black text-amber-500 group-hover:scale-105 transition-transform">🏢 Vývojári</span>
           <span className="text-[11px] text-zinc-400">Poskytovatelia hier</span>

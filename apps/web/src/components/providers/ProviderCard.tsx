@@ -13,10 +13,10 @@ export function ProviderCard({ provider }: ProviderCardProps) {
   return (
     <Link
       href={`/providers/${provider.slug}`}
-      className="group flex items-center p-4 bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 rounded-lg hover:shadow-md transition-all duration-200"
+      className="group flex items-center p-4 bg-zinc-900 border-[var(--border-brutal)] border-black hover:border-amber-500/50 rounded-lg hover:shadow-md transition-all duration-200"
     >
       {/* Fallback Artwork Initials block */}
-      <div className="w-10 h-10 rounded bg-zinc-800 border border-zinc-700 flex items-center justify-center font-bold text-amber-500 group-hover:bg-amber-500 group-hover:text-zinc-950 transition-colors">
+      <div className="w-10 h-10 rounded bg-zinc-800 border-[var(--border-medium)] border-black flex items-center justify-center font-bold text-amber-500 group-hover:bg-amber-500 group-hover:text-zinc-950 transition-colors">
         {initial}
       </div>
 

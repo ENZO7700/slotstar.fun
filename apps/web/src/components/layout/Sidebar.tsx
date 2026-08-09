@@ -20,9 +20,9 @@ export function Sidebar() {
   ];
 
   return (
-    <aside className="hidden lg:flex flex-col w-(--sidebar-width) bg-zinc-900 border-r border-zinc-800 sticky top-0 h-dvh shrink-0 overflow-hidden">
+    <aside className="hidden lg:flex flex-col w-(--sidebar-width) bg-zinc-900 border-r-[var(--border-brutal)] border-r-black sticky top-0 h-dvh shrink-0 overflow-hidden">
       {/* Brand Header */}
-      <div className="h-16 flex items-center px-6 border-b border-zinc-800 shrink-0">
+      <div className="h-16 flex items-center px-6 border-b-[var(--border-medium)] border-b-black shrink-0">
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-xl font-black tracking-tight text-amber-500">
             SLOT<span className="text-zinc-50 font-medium">STAR</span>

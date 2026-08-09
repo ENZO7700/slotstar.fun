@@ -18,7 +18,7 @@ export function Header() {
   };
 
   return (
-    <header className="w-full bg-[#111111] text-white border-b border-zinc-800 z-40 sticky top-0 font-sans">
+    <header className="w-full bg-[#111111] text-white border-b-[var(--border-brutal)] border-b-black z-40 sticky top-0 font-sans">
       <div className="max-w-360 mx-auto flex items-center justify-between px-3 md:px-4 h-14 md:h-15">
         
         {/* Logo — hidden on desktop where sidebar shows it */}
