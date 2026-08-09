@@ -22,7 +22,7 @@ export function GameCard({ game, priority = false }: GameCardProps) {
       className="group flex flex-col space-y-2 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg p-1"
     >
       {/* Thumbnail Aspect Container */}
-      <div className="relative aspect-4/3 w-full rounded-lg overflow-hidden border border-zinc-900 group-hover:border-zinc-800 transition-colors">
+      <div className="relative aspect-[3/4] w-full rounded-lg overflow-hidden border border-zinc-900 group-hover:border-zinc-800 transition-colors">
         <GameImage
           src={game.thumbnail.src}
           alt={decodeHtmlEntities(game.thumbnail.alt || game.name)}
@@ -30,13 +30,13 @@ export function GameCard({ game, priority = false }: GameCardProps) {
         />
 
         {/* Floating Badges - Left Side */}
-        <div className="absolute top-2 left-2 flex flex-col space-y-1 z-10">
+        <div className="absolute top-2 left-2 flex flex-col space-y-1 z-20">
           {isUpcoming && <Badge variant="warning">Pripravované</Badge>}
           {isFeatured && <Badge variant="brand">Odporúčané</Badge>}
         </div>
 
         {/* Floating Badges - Right Side (BONUS, etc.) */}
-        <div className="absolute top-2 right-2 flex flex-col space-y-1 z-10">
+        <div className="absolute top-2 right-2 flex flex-col space-y-1 z-20">
           {game.technical?.bonusBuy && <Badge variant="success">Bonus</Badge>}
         </div>
 
@@ -50,10 +50,10 @@ export function GameCard({ game, priority = false }: GameCardProps) {
 
       {/* Metadata Labels */}
       <div className="flex flex-col truncate px-1 min-h-[3.5rem]">
-        <span className="text-sm font-semibold text-zinc-100 group-hover:text-amber-500 transition-colors truncate">
+        <span className="text-sm font-semibold text-zinc-100 group-hover:text-amber-500 transition-colors truncate max-w-full">
           {decodeHtmlEntities(game.name)}
         </span>
-        <span className="text-xs text-amber-500/80 font-medium truncate">
+        <span className="text-xs text-zinc-400 font-medium truncate max-w-full">
           {game.provider ? decodeHtmlEntities(game.provider.name) : 'Neznámy poskytovateľ'}
         </span>
       </div>
