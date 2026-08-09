@@ -67,7 +67,7 @@ export function GameFilters({ providers, themes, types }: GameFiltersProps) {
   return (
     <div className="w-full bg-zinc-900 border border-zinc-800 rounded-xl p-4 mb-6">
       {/* Quick Category Filter Pills */}
-      <div className="flex items-center space-x-2 overflow-x-auto pb-3 mb-3 border-b border-zinc-800 scrollbar-none">
+      <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-3 border-b border-zinc-800 scrollbar-none">
         <button
           type="button"
           onClick={() => {
@@ -76,7 +76,7 @@ export function GameFilters({ providers, themes, types }: GameFiltersProps) {
             params.delete('orderBy');
             router.push(`/games?${params.toString()}`);
           }}
-          className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap ${
+          className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap shrink-0 ${
             !searchParams.get('orderBy')
               ? 'bg-amber-500 text-zinc-950 font-bold shadow-md'
               : 'bg-zinc-950 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800 border border-zinc-800'
@@ -93,7 +93,7 @@ export function GameFilters({ providers, themes, types }: GameFiltersProps) {
             params.set('order', 'desc');
             router.push(`/games?${params.toString()}`);
           }}
-          className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap flex items-center space-x-1.5 ${
+          className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap flex items-center gap-1.5 shrink-0 ${
             searchParams.get('orderBy') === 'trending'
               ? 'bg-amber-500 text-zinc-950 font-bold shadow-md'
               : 'bg-zinc-950 text-amber-400 border border-amber-500/20 hover:bg-amber-500 hover:text-zinc-950'
@@ -111,7 +111,7 @@ export function GameFilters({ providers, themes, types }: GameFiltersProps) {
             params.set('order', 'desc');
             router.push(`/games?${params.toString()}`);
           }}
-          className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap flex items-center space-x-1.5 ${
+          className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap flex items-center gap-1.5 shrink-0 ${
             searchParams.get('orderBy') === 'most_played'
               ? 'bg-amber-500 text-zinc-950 font-bold shadow-md'
               : 'bg-zinc-950 text-zinc-400 hover:text-zinc-100 border border-zinc-800'
@@ -129,7 +129,7 @@ export function GameFilters({ providers, themes, types }: GameFiltersProps) {
             params.set('order', 'desc');
             router.push(`/games?${params.toString()}`);
           }}
-          className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap flex items-center space-x-1.5 ${
+          className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all whitespace-nowrap flex items-center gap-1.5 shrink-0 ${
             searchParams.get('orderBy') === 'gold'
               ? 'bg-amber-500 text-zinc-950 font-bold shadow-md'
               : 'bg-zinc-950 text-zinc-400 hover:text-zinc-100 border border-zinc-800'
