@@ -3,5 +3,5 @@
   "framework": "nextjs",
   "buildCommand": "npm run build",
   "installCommand": "rm -rf node_modules package-lock.json && npm install",
-  "outputDirectory": "apps/web/.next"
+  "outputDirectory": "build-dist"
 }

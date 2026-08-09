@@ -46,3 +46,4 @@ askpass.sh
 .vercel
 .env*
 *.zip
+build-dist/
