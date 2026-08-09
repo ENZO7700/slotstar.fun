@@ -19,7 +19,7 @@ export function Footer() {
               <Icons.Star size={16} className="text-zinc-500 group-hover:text-amber-500 transition-colors" />
             </div>
             <span className="text-xl font-black tracking-tight text-white group-hover:text-amber-400 transition-colors">
-              SLOT<span className="text-zinc-600 font-medium">STAR</span>
+              SLOT<span className="text-zinc-400 font-medium">STAR</span>
             </span>
           </Link>
           <p className="text-sm text-zinc-400 leading-relaxed max-w-sm">
@@ -49,22 +49,22 @@ export function Footer() {
           <ul className="text-sm text-zinc-400 space-y-3">
             <li>
               <Link href="/blog" className="flex items-center hover:text-amber-400 hover:translate-x-1 transition-transform duration-200">
-                <span className="mr-2 text-zinc-600">→</span> Blog a novinky
+                <span className="mr-2 text-zinc-400">→</span> Blog a novinky
               </Link>
             </li>
             <li>
               <Link href="/responsible-gaming" className="flex items-center hover:text-amber-400 hover:translate-x-1 transition-transform duration-200">
-                <span className="mr-2 text-zinc-600">→</span> Zodpovedné hranie
+                <span className="mr-2 text-zinc-400">→</span> Zodpovedné hranie
               </Link>
             </li>
             <li>
               <Link href="/privacy" className="flex items-center hover:text-amber-400 hover:translate-x-1 transition-transform duration-200">
-                <span className="mr-2 text-zinc-600">→</span> Ochrana osobných údajov
+                <span className="mr-2 text-zinc-400">→</span> Ochrana osobných údajov
               </Link>
             </li>
             <li>
               <Link href="/terms" className="flex items-center hover:text-amber-400 hover:translate-x-1 transition-transform duration-200">
-                <span className="mr-2 text-zinc-600">→</span> Obchodné podmienky
+                <span className="mr-2 text-zinc-400">→</span> Obchodné podmienky
               </Link>
             </li>
           </ul>
@@ -72,7 +72,7 @@ export function Footer() {
       </div>
       
       {/* Bottom Bar */}
-      <div className="relative max-w-(--max-content-width) mx-auto mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-500 z-10">
+      <div className="relative max-w-(--max-content-width) mx-auto mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-400 z-10">
         <p className="font-medium">© {new Date().getFullYear()} SlotStars.fun. Všetky práva vyhradené.</p>
         <div className="flex items-center gap-3">
           <span className="flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-white/10 text-zinc-300 font-black text-[10px] shadow-sm">

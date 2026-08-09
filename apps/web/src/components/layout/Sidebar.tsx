@@ -66,17 +66,17 @@ export function Sidebar() {
       </div>
 
       {/* Footer Info */}
-      <div className="px-4 py-3 border-t border-zinc-800 text-xs text-zinc-500 space-y-1.5 shrink-0">
-        <Link href="/responsible-gaming" className="block hover:text-zinc-300 transition-colors">
+      <div className="px-4 py-3 border-t border-zinc-800 text-xs text-zinc-400 space-y-1.5 shrink-0">
+        <Link href="/responsible-gaming" className="block hover:text-zinc-100 transition-colors">
           Zodpovedné hranie
         </Link>
-        <Link href="/privacy" className="block hover:text-zinc-300 transition-colors">
+        <Link href="/privacy" className="block hover:text-zinc-100 transition-colors">
           Ochrana súkromia
         </Link>
-        <Link href="/terms" className="block hover:text-zinc-300 transition-colors">
+        <Link href="/terms" className="block hover:text-zinc-100 transition-colors">
           Všeobecné podmienky
         </Link>
-        <p className="pt-1 text-[10px] text-zinc-600">© 2026 SlotStars.fun</p>
+        <p className="pt-1 text-[10px] text-zinc-400">© 2026 SlotStars.fun</p>
       </div>
     </aside>
   );

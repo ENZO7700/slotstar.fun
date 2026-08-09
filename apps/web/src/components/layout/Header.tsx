@@ -41,6 +41,7 @@ export function Header() {
               name="q"
               type="search"
               autoComplete="off"
+              aria-label="Vyhľadávanie hier"
               placeholder="Hľadať hry..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
@@ -52,6 +53,7 @@ export function Header() {
           {/* Primary Action */}
           <a 
             href={AFFILIATE_URL} 
+            aria-label="Získaj bonus"
             className="flex items-center justify-center h-10 md:h-9 px-4 md:px-5 bg-[#4caf50] hover:bg-[#439c47] text-white text-xs md:text-[13px] font-bold rounded-sm transition-colors whitespace-nowrap"
           >
             ZÍSKAJ BONUS
@@ -60,6 +62,7 @@ export function Header() {
           {/* Responsible Gaming (Icon only on mobile) */}
           <Link 
             href="/responsible-gaming" 
+            aria-label="Zodpovedné hranie"
             className="flex items-center justify-center h-10 md:h-9 min-w-10 md:min-w-0 px-2.5 md:px-4 bg-[#2a2b30] hover:bg-[#36373d] text-white text-[13px] font-medium rounded-sm transition-colors"
             title="Zodpovedné hranie"
           >

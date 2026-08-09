@@ -24,7 +24,7 @@ export function ProviderCard({ provider }: ProviderCardProps) {
         <h3 className="text-sm font-semibold text-zinc-100 group-hover:text-amber-500 transition-colors truncate">
           {provider.name}
         </h3>
-        <p className="text-xs text-zinc-500">
+        <p className="text-xs text-zinc-400">
           {provider.count} {provider.count === 1 ? 'hra' : provider.count < 5 ? 'hry' : 'hier'}
         </p>
       </div>

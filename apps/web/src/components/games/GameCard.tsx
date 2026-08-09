@@ -67,7 +67,7 @@ export function GameCard({ game, priority = false }: GameCardProps) {
           {game.provider ? decodeHtmlEntities(game.provider.name) : 'Neznámy poskytovateľ'}
         </span>
         {volatility && (
-          <span className="text-[10px] text-zinc-500 truncate leading-tight mt-0.5">
+          <span className="text-[10px] text-zinc-400 truncate leading-tight mt-0.5">
             Volatilita: {volatility}
           </span>
         )}

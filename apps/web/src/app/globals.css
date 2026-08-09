@@ -9,7 +9,7 @@
   --color-void-soft:      #0a0a0a; /* near-black — panels, cards */
   --color-void-raised:    #111111; /* elevated surfaces */
   --color-concrete:       #b5b5b0; /* medium grey — secondary text */
-  --color-concrete-dark:  #747470; /* dark grey — muted / metadata */
+  --color-concrete-dark:  #a1a1aa; /* dark grey — muted / metadata */
   --color-concrete-light: #dedbd3; /* light — borders on dark bg */
   --color-blood:          #ff0033; /* blood red — primary accent */
   --color-blood-dark:     #cc0029; /* blood hover */
