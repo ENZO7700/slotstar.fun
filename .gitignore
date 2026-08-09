@@ -47,3 +47,6 @@ askpass.sh
 .env*
 *.zip
 build-dist/
+playwright-report/
+test-results/
+
