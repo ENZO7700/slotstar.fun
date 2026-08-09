@@ -26,14 +26,14 @@ export function AffiliateButton({
     'inline-flex items-center justify-center font-black uppercase tracking-widest',
     'transition-all duration-100 cursor-pointer select-none',
     'border-[3px] border-black',
-    'active:translate-x-[2px] active:translate-y-[2px] active:shadow-none',
+    'active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
     'focus:outline-none focus:ring-2 focus:ring-[#ff0033] focus:ring-offset-2 focus:ring-offset-black',
     fullWidth ? 'w-full' : '',
   ].join(' ');
 
   const variants = {
-    primary:   'bg-[#ff0033] text-white shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] hover:-translate-x-[1px] hover:-translate-y-[1px]',
-    secondary: 'bg-black text-[#ff0033] shadow-[4px_4px_0_#ff0033] hover:shadow-[6px_6px_0_#ff0033] hover:-translate-x-[1px] hover:-translate-y-[1px]',
+    primary:   'bg-[#ff0033] text-white shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] hover:-translate-x-px hover:-translate-y-px',
+    secondary: 'bg-black text-[#ff0033] shadow-[4px_4px_0_#ff0033] hover:shadow-[6px_6px_0_#ff0033] hover:-translate-x-px hover:-translate-y-px',
     compact:   'bg-[#ff0033] text-white border-[2px] shadow-[3px_3px_0_#000] hover:shadow-[5px_5px_0_#000]',
     ghost:     'bg-transparent text-[#ff0033] border-[#ff0033] hover:bg-[#ff0033] hover:text-black',
   };
@@ -120,8 +120,8 @@ export function AffiliateFloatingButton() {
         'bg-[#ff0033] text-white',
         'px-4 py-3 text-xs font-black uppercase tracking-widest',
         'border-[3px] border-black shadow-[4px_4px_0_#000]',
-        'hover:shadow-[6px_6px_0_#000] hover:-translate-x-[1px] hover:-translate-y-[1px]',
-        'active:translate-x-[2px] active:translate-y-[2px] active:shadow-none',
+        'hover:shadow-[6px_6px_0_#000] hover:-translate-x-px hover:-translate-y-px',
+        'active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
         'transition-all duration-100 cursor-pointer',
         'animate-[brutal-pulse_3s_ease-in-out_infinite]',
       ].join(' ')}
