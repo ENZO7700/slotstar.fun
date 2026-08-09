@@ -23,7 +23,7 @@ export function GameCard({ game, priority = false }: GameCardProps) {
       className="group flex flex-col focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg"
     >
       {/* Thumbnail */}
-      <div className="relative aspect-3/4 w-full rounded-lg overflow-hidden border-[var(--border-brutal)] border-black group-hover:border-zinc-600 transition-colors bg-zinc-900">
+      <div className="relative aspect-3/4 w-full rounded-lg overflow-hidden border-2 border-black group-hover:border-zinc-600 transition-colors bg-zinc-900">
         <GameImage
           src={game.thumbnail.src}
           alt={decodeHtmlEntities(game.thumbnail.alt || game.name)}
