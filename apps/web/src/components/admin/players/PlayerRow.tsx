@@ -1,7 +1,17 @@
 import React from 'react';
 import { VIPStatusBadge } from './VIPStatusBadge';
 
-export function PlayerRow({ player }: { player: any }) {
+interface PlayerRowData {
+  id?: string;
+  username: string;
+  email: string;
+  realBalance?: number;
+  kycStatus?: string;
+  vipTier: 'Diamond' | 'Platinum' | 'Gold' | 'Silver' | 'Bronze';
+  lastLogin?: string;
+}
+
+export function PlayerRow({ player }: { player: PlayerRowData }) {
   const isHighValue = player.vipTier === 'Diamond' || player.vipTier === 'Platinum';
 
   return (

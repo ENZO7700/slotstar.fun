@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 interface VIPBadgeProps {
-  tier: 'Diamond' | 'Platinum' | 'Gold';
+  tier: 'Diamond' | 'Platinum' | 'Gold' | 'Silver' | 'Bronze';
   isLarge?: boolean;
 }
 
