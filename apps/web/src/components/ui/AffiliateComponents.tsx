@@ -90,18 +90,19 @@ export function AffiliateBanner({
   variant = 'blood',
 }: AffiliateBannerProps) {
   const styles = {
-    blood:   'bg-[#ff0033] text-white border-b-4 border-black',
-    warning: 'bg-[#ffd700] text-black border-b-4 border-black',
+    blood:   'bg-[#ff0033] text-white border-b-2 border-black',
+    warning: 'bg-[#ffd700] text-black border-b-2 border-black',
   };
 
   return (
     <a
       {...AFFILIATE_LINK_PROPS}
-      className={`flex items-center justify-center gap-4 px-4 py-2 text-sm font-black uppercase tracking-wider cursor-pointer hover:opacity-90 transition-opacity ${styles[variant]}`}
+      className={`w-full flex items-center justify-center gap-2 sm:gap-3 px-3 sm:px-4 min-h-11 text-xs sm:text-xs md:text-sm font-black uppercase tracking-wider cursor-pointer hover:opacity-95 transition-opacity ${styles[variant]}`}
       aria-label="Affiliate promotion banner"
     >
-      <span>{message}</span>
-      <span className="font-black underline">{ctaLabel}</span>
+      <span className="hidden sm:inline truncate">{message}</span>
+      <span className="sm:hidden truncate">🎁 Bonus pre nových hráčov!</span>
+      <span className="font-black underline shrink-0 whitespace-nowrap">{ctaLabel}</span>
     </a>
   );
 }
@@ -115,15 +116,15 @@ export function AffiliateFloatingButton() {
     <a
       {...AFFILIATE_LINK_PROPS}
       className={[
-        'fixed bottom-20 right-4 z-50 lg:bottom-6',
+        'fixed bottom-20 right-4 z-40 lg:bottom-6',
         'flex items-center gap-2',
         'bg-[#ff0033] text-white',
         'px-4 py-3 text-xs font-black uppercase tracking-widest',
-        'border-[3px] border-black shadow-[4px_4px_0_#000]',
-        'hover:shadow-[6px_6px_0_#000] hover:-translate-x-px hover:-translate-y-px',
-        'active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
-        'transition-all duration-100 cursor-pointer',
-        'animate-[brutal-pulse_3s_ease-in-out_infinite]',
+        'border-2 border-black shadow-lg',
+        'hover:bg-[#cc0029] hover:scale-105',
+        'active:scale-95',
+        'transition-all duration-200 cursor-pointer',
+        'rounded-lg',
       ].join(' ')}
       aria-label="Get casino bonus"
     >

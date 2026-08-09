@@ -55,7 +55,7 @@ npm install
 cd apps/web
 npm run dev
 ```
-Aplikácia pobeží na `http://localhost:3000`.
+Aplikácia pobeží na `http://localhost:3377`.
 
 ---
 

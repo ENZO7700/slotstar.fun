@@ -7,11 +7,18 @@ interface GameRailProps {
 }
 
 export function GameRail({ games }: GameRailProps) {
+  // Deduplicate games by ID
+  const seen = new Set<number>();
+  const uniqueGames = games.filter((game) => {
+    if (seen.has(game.id)) return false;
+    seen.add(game.id);
+    return true;
+  });
+
   return (
     <div className="relative w-full">
-      {/* Horizontal snapping overflow scrollbar track wrapper */}
       <div className="flex space-x-4 overflow-x-auto py-2 scroll-smooth snap-x snap-mandatory">
-        {games.map((game, index) => (
+        {uniqueGames.map((game, index) => (
           <div
             key={game.id}
             className="w-40 sm:w-50 shrink-0 snap-start"
