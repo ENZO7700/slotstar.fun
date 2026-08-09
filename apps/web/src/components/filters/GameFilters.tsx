@@ -67,7 +67,7 @@ export function GameFilters({ providers, themes, types }: GameFiltersProps) {
   return (
     <div className="w-full bg-zinc-900 border border-zinc-800 rounded-xl p-4 mb-6">
       {/* Quick Category Filter Pills */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-3 border-b border-zinc-800 scrollbar-none" data-testid="category-pills-container">
+      <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-3 border-b border-zinc-800 scrollbar-none">
         <button
           type="button"
           onClick={() => {
