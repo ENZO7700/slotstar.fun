@@ -20,4 +20,22 @@ describe('Badge Component', () => {
     const badge = screen.getByText('Brand');
     expect(badge.className).toContain('bg-amber-950');
   });
+
+  it('applies success variant styles', () => {
+    render(<Badge variant="success">Success</Badge>);
+    const badge = screen.getByText('Success');
+    expect(badge.className).toContain('bg-emerald-950');
+  });
+
+  it('applies danger variant styles', () => {
+    render(<Badge variant="danger">Danger</Badge>);
+    const badge = screen.getByText('Danger');
+    expect(badge.className).toContain('bg-red-950');
+  });
+
+  it('applies warning variant styles', () => {
+    render(<Badge variant="warning">Warning</Badge>);
+    const badge = screen.getByText('Warning');
+    expect(badge.className).toContain('bg-yellow-950');
+  });
 });
