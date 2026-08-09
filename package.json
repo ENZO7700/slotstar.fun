@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "dev": "npm run dev -w @slotstar/web",
-    "build": "npm run build -w @slotstar/web && cp -r apps/web/.next build-dist",
+    "build": "npm run build -w @slotstar/web && mkdir -p build-dist && cp -R apps/web/.next/. build-dist/",
     "lint": "npm run lint -w @slotstar/web",
     "typecheck": "npm run typecheck -w @slotstar/web",
     "sync:images": "npm run sync:images -w @slotstar/web",
