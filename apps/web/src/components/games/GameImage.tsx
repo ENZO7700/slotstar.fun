@@ -24,7 +24,10 @@ export function GameImage({ src, alt, className = '', priority = false }: GameIm
   }
 
   return (
-    <div className={`relative w-full h-full overflow-hidden bg-zinc-900 rounded-lg ${className}`}>
+    <div 
+      className={`relative w-full overflow-hidden bg-zinc-900 rounded-lg ${className}`}
+      style={{ position: 'relative', height: '100%' }}
+    >
       <Image
         src={src}
         alt={alt}
