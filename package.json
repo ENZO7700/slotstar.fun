@@ -14,6 +14,8 @@
     "build": "npm run build -w @slotstar/web",
     "lint": "npm run lint -w @slotstar/web",
     "typecheck": "npm run typecheck -w @slotstar/web",
+    "test": "npm run test -w @slotstar/web",
+    "test:all": "npm run test:all -w @slotstar/web",
     "sync:images": "npm run sync:images -w @slotstar/web"
   },
   "devDependencies": {

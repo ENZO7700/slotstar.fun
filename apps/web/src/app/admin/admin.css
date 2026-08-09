@@ -1,0 +1,35 @@
+.nexus-admin {
+  --nexus-bg: #09090b;
+  --nexus-gold: #f59e0b;
+  --nexus-win: #00c52a;
+  --nexus-alert: #ff0033;
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(245, 158, 11, 0.08), transparent 50%),
+    radial-gradient(900px 500px at 90% 0%, rgba(0, 197, 42, 0.05), transparent 45%),
+    var(--nexus-bg);
+  color: #f4f4f5;
+}
+
+.nexus-admin .glass-card {
+  background: rgba(24, 24, 27, 0.55);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(63, 63, 70, 0.8);
+  border-radius: 12px;
+}
+
+.nexus-admin .text-win {
+  color: var(--nexus-win);
+}
+
+.nexus-admin .text-alert {
+  color: var(--nexus-alert);
+}
+
+.nexus-admin .text-gold {
+  color: var(--nexus-gold);
+}
+
+.nexus-admin .border-gold {
+  border-color: rgba(245, 158, 11, 0.5);
+}
