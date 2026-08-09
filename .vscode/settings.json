@@ -1,0 +1,7 @@
+{
+  "python.defaultInterpreterPath": "python3",
+  "git.ignoredRepositories": [
+    "chrome-devtools-mcp",
+    "chrome-devtools-mcp/devtools-frontend"
+  ]
+}
