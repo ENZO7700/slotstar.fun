@@ -50,3 +50,5 @@ build-dist/
 playwright-report/
 test-results/
 
+# Cloned MCP tools
+chrome-devtools-mcp/
