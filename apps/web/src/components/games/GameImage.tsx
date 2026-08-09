@@ -33,6 +33,7 @@ export function GameImage({ src, alt, className = '', priority = false }: GameIm
         className="object-cover transition-transform duration-300 hover:scale-105"
         onError={() => setError(true)}
         priority={priority}
+        loading={priority ? 'eager' : 'lazy'}
       />
     </div>
   );
