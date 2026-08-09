@@ -1,5 +1,10 @@
 # SlotStar.fun — WordPress & Next.js Monorepo
 
+> **⚡ Rýchle spustenie na novom porte 3377:**
+> - **Vývojový server (dev):** `npm run dev` → [http://localhost:3377](http://localhost:3377)
+> - **Produkčný server:** `npm run build && npm run start` → [http://localhost:3377](http://localhost:3377)
+> - **Alternatívne cez env:** `PORT=3377 npm run dev`
+
 Tento repozitár obsahuje kompletný zdrojový kód pre casino affiliate portál **SlotStar.fun**. Projekt spája headless WordPress backend bežiaci na WebSupporte s moderným Next.js frontendom nasadeným na Verceli.
 
 ---
