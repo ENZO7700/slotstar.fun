@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { useNexusAdmin } from "@/context/NexusAdminContext";
@@ -60,10 +61,12 @@ export function PlayerDetailView({ playerId }: { playerId: string }) {
       <GlassCard className="p-6">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <img
+            <Image
               src={player.avatarUrl}
-              alt=""
-              className="w-16 h-16 rounded-xl border border-zinc-700"
+              alt={player.username}
+              width={64}
+              height={64}
+              className="w-16 h-16 rounded-xl border border-zinc-700 object-cover"
             />
             <div>
               <div className="flex items-center gap-2 flex-wrap">

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useNexusAdmin } from "@/context/NexusAdminContext";
@@ -102,10 +103,12 @@ export function PlayersTable() {
                     href={`/admin/players/${p.id}`}
                     className="flex items-center gap-3 group"
                   >
-                    <img
+                    <Image
                       src={p.avatarUrl}
-                      alt=""
-                      className="w-8 h-8 rounded-lg border border-zinc-700"
+                      alt={p.username}
+                      width={32}
+                      height={32}
+                      className="w-8 h-8 rounded-lg border border-zinc-700 object-cover"
                     />
                     <div>
                       <p className="font-bold text-white group-hover:text-amber-400">
