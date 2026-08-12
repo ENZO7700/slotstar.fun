@@ -11,6 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
+    "test:visual": "playwright test e2e/visual-regression.spec.ts",
+    "test:visual:update": "playwright test e2e/visual-regression.spec.ts --update-snapshots",
     "test:all": "npm run typecheck && npm run lint && npm run test && npm run test:e2e",
     "sync:images": "node scripts/sync-game-images.js"
   },

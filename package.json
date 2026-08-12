@@ -17,6 +17,8 @@
     "test": "npm run test -w @slotstar/web",
     "test:all": "npm run test:all -w @slotstar/web",
     "test:e2e": "npm run test:e2e -w @slotstar/web",
+    "test:visual": "npm run test:visual -w @slotstar/web",
+    "test:visual:update": "npm run test:visual:update -w @slotstar/web",
     "sync:images": "npm run sync:images -w @slotstar/web",
     "vercel-build": "npm run build"
   },
