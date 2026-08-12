@@ -1,6 +1,8 @@
 Searched for "AFFILIATE_URL"
 Viewed affiliate.ts:1-28
 
+> Fortuna partner affinity (žltá iba na sponsored surfaces): pozri [`docs/FORTUNA_AFFINITY.md`](./FORTUNA_AFFINITY.md).
+
 Tu je kompletný návod a vysvetlenie, ako funguje affiliate program **22Bet Partners (`22betpartners.com`)**, ako sa stať partnerom a ako získané odkazy prepojiť s tvojou aplikáciou `slotstar.fun`.
 
 ---
