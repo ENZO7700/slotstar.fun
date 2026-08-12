@@ -3,7 +3,11 @@ import { Sidebar } from './Sidebar';
 import { Header } from './Header';
 import { MobileNavigation } from './MobileNavigation';
 import { Footer } from './Footer';
-import { AffiliateBanner, AffiliateFloatingButton } from '../ui/AffiliateComponents';
+import {
+  AffiliateBanner,
+  AffiliateFloatingButton,
+  PartnerStrip,
+} from '../ui/AffiliateComponents';
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -14,6 +18,8 @@ export function AppShell({ children }: AppShellProps) {
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans flex flex-col">
       {/* Top Banner — Everywhere user looks #1 */}
       <AffiliateBanner />
+      {/* Fortuna partner strip — renders only when FORTUNA_AFFILIATE_URL is set */}
+      <PartnerStrip />
 
       {/* Grid Layout: Sidebar + Main Column */}
       <div className="app-shell-grid flex-1">

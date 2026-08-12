@@ -1,9 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import { AffiliateButton } from '../ui/AffiliateComponents';
+import { AffiliateButton, isFortunaAffinityActive } from '../ui/AffiliateComponents';
+import { AFFILIATE_CTA } from '@/lib/affiliate';
 import { Icons } from '../ui/Icons';
 
 export function Footer() {
+  const fortuna = isFortunaAffinityActive();
+
   return (
     <footer className="relative w-full bg-zinc-950 border-t-[var(--border-brutal)] border-t-black py-12 px-6 mt-auto overflow-hidden">
       {/* Subtle Background Glow */}
@@ -25,8 +28,21 @@ export function Footer() {
           <p className="text-sm text-zinc-400 leading-relaxed max-w-sm">
             SlotStars.fun je prémiová platforma na objavovanie a bezplatné testovanie demo kasíno hier od špičkových poskytovateľov. Zažite čisté vzrušenie bez rizika.
           </p>
-          <div className="pt-2">
+          <div className="pt-2 space-y-3">
             <AffiliateButton label="🎰 Pozrieť top kasína" variant="ghost" size="sm" />
+            {fortuna ? (
+              <div className="partner-fortuna border border-[var(--partner-border)] bg-[var(--partner-surface)] p-3">
+                <p className="mb-2 text-[9px] font-black uppercase tracking-[0.2em] text-[var(--partner-brand)]">
+                  Oficiálny partner
+                </p>
+                <AffiliateButton
+                  label={AFFILIATE_CTA.fortunaPrimary}
+                  variant="primary"
+                  size="sm"
+                  partner="fortuna"
+                />
+              </div>
+            ) : null}
           </div>
         </div>
 
