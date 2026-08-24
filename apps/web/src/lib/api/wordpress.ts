@@ -217,7 +217,9 @@ export async function getGame(externalId: number): Promise<GameDetail> {
   } catch (err: unknown) {
     if (useFixtures) {
       const game = mockGames.find(g => g.externalId === externalId || g.id === externalId);
-      if (game) return game;
+      if (game) {
+        return withLocalGameImages([game])[0];
+      }
     }
     throw err;
   }
@@ -451,6 +453,16 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
 
 // Helpers for mock paging
 
+function withLocalGameImages(games: GameSummary[]): GameSummary[] {
+  return games.map((game) => ({
+    ...game,
+    thumbnail: {
+      ...game.thumbnail,
+      src: `/images/games/${game.slug}.png`,
+    },
+  }));
+}
+
 function getMockGamesPaginated(params: GetGamesParams): PaginatedResponse<GameSummary> {
   let filtered = [...mockGames];
 
@@ -469,7 +481,7 @@ function getMockGamesPaginated(params: GetGamesParams): PaginatedResponse<GameSu
   const paginated = filtered.slice(start, start + perPage);
 
   return {
-    data: paginated,
+    data: withLocalGameImages(paginated),
     pagination: {
       page,
       perPage,
