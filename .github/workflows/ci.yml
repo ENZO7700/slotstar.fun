@@ -63,8 +63,10 @@ jobs:
         run: npx playwright test --project=chromium --grep-invert "Visual Regression"
         working-directory: apps/web
         env:
+          CI: true
           NEXT_PUBLIC_SITE_URL: https://slotstar.fun
           WORDPRESS_API_URL: https://cms.slotstar.fun/wp-json
+          NEXT_PUBLIC_ENABLE_DEV_FIXTURES: 'true'
 
   wordpress:
     name: WordPress PHP & Docker Validation
