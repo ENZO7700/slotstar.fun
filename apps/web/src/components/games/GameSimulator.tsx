@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { GameImage } from './GameImage';
 import { Button } from '../ui/Button';
 import { AFFILIATE_LINK_PROPS } from '@/lib/affiliate';
+import { getPublicErrorMessage } from '@/lib/safe-error';
 
 interface GameSimulatorProps {
   externalId: number;
@@ -30,7 +31,7 @@ export function GameSimulator({ externalId, gameName, thumbnailSrc }: GameSimula
       setEmbedUrl(data.embedUrl);
       setIsPlaying(true);
     } catch (err: unknown) {
-      setErrorMsg(err instanceof Error ? err.message : 'Chyba pri pripájaní k serveru.');
+      setErrorMsg(getPublicErrorMessage(err, 'Chyba pri pripájaní k serveru.'));
     } finally {
       setIsLoading(false);
     }

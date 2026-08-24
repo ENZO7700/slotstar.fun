@@ -13,8 +13,12 @@ function parseEnv() {
   });
 
   if (!parsed.success) {
-    console.error('Invalid environment variables:', parsed.error.flatten().fieldErrors);
-    throw new Error('Invalid environment variables in SlotStar web app.');
+    if (process.env.NODE_ENV !== 'production') {
+      console.error('Invalid environment variables:', parsed.error.flatten().fieldErrors);
+    } else {
+      console.error('Invalid environment variables configuration.');
+    }
+    throw new Error('Application configuration error.');
   }
 
   return parsed.data;

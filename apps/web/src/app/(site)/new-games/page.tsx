@@ -2,6 +2,7 @@ import React from 'react';
 import { getGames } from '@/lib/api/wordpress';
 import { GameGrid } from '@/components/games/GameGrid';
 import { ApiErrorState } from '@/components/states/ApiErrorState';
+import { getPublicErrorMessage } from '@/lib/safe-error';
 import { GameSummary } from '@/types/game';
 
 export const dynamic = 'force-dynamic';
@@ -14,7 +15,7 @@ export default async function NewGamesPage() {
     const res = await getGames({ perPage: 24, orderBy: 'date', order: 'desc' });
     games = res.data;
   } catch (err: unknown) {
-    errorMsg = err instanceof Error ? err.message : 'Chyba pri načítaní nových hier.';
+    errorMsg = getPublicErrorMessage(err, 'Chyba pri načítaní nových hier.');
   }
 
   if (errorMsg) {

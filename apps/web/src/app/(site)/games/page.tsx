@@ -4,6 +4,7 @@ import { GameGrid } from '@/components/games/GameGrid';
 import { GameFilters } from '@/components/filters/GameFilters';
 import { EmptyState } from '@/components/states/EmptyState';
 import { ApiErrorState } from '@/components/states/ApiErrorState';
+import { getPublicErrorMessage } from '@/lib/safe-error';
 import Link from 'next/link';
 
 import { Provider } from '@/types/provider';
@@ -62,7 +63,7 @@ export default async function GamesPage({ searchParams }: PageProps) {
     themes = themesRes.data;
     types = typesRes.data;
   } catch (err: unknown) {
-    errorMsg = err instanceof Error ? err.message : 'Chyba pri načítaní katalógu hier.';
+    errorMsg = getPublicErrorMessage(err, 'Chyba pri načítaní katalógu hier.');
   }
 
   if (errorMsg) {

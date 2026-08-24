@@ -3,6 +3,7 @@ import { getGames, getProvider } from '@/lib/api/wordpress';
 import { GameGrid } from '@/components/games/GameGrid';
 import { EmptyState } from '@/components/states/EmptyState';
 import { ApiErrorState } from '@/components/states/ApiErrorState';
+import { getPublicErrorMessage } from '@/lib/safe-error';
 import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';
@@ -30,7 +31,7 @@ export default async function ProviderDetailPage({ params }: PageProps) {
     provider = providerRes;
     gamesResponse = gamesRes;
   } catch (err: unknown) {
-    errorMsg = err instanceof Error ? err.message : 'Nepodarilo sa načítať detaily poskytovateľa.';
+    errorMsg = getPublicErrorMessage(err, 'Nepodarilo sa načítať detaily poskytovateľa.');
   }
 
   if (errorMsg && !provider) {
