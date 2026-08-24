@@ -2,6 +2,7 @@ import React from 'react';
 import { getProviders } from '@/lib/api/wordpress';
 import { ProviderGrid } from '@/components/providers/ProviderGrid';
 import { ApiErrorState } from '@/components/states/ApiErrorState';
+import { getPublicErrorMessage } from '@/lib/safe-error';
 import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';
@@ -33,7 +34,7 @@ export default async function ProvidersPage({ searchParams }: PageProps) {
       letter,
     });
   } catch (err: unknown) {
-    errorMsg = err instanceof Error ? err.message : 'Chyba pri načítaní poskytovateľov hier.';
+    errorMsg = getPublicErrorMessage(err, 'Chyba pri načítaní poskytovateľov hier.');
   }
 
   if (errorMsg) {

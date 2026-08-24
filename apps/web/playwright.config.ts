@@ -3,6 +3,10 @@ import { defineConfig, devices } from '@playwright/test';
 const PORT = process.env.PORT || 3377;
 const baseURL = `http://localhost:${PORT}`;
 
+// CI runners cannot reliably reach the production WordPress CMS. Use local
+// fixtures so E2E validates UI behaviour without a live backend dependency.
+const e2eUseFixtures = process.env.CI === 'true' || process.env.NEXT_PUBLIC_ENABLE_DEV_FIXTURES === 'true';
+
 export default defineConfig({
   testDir: './e2e',
   fullyParallel: true,
@@ -43,5 +47,9 @@ export default defineConfig({
     url: baseURL,
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
+    env: {
+      ...process.env,
+      ...(e2eUseFixtures ? { NEXT_PUBLIC_ENABLE_DEV_FIXTURES: 'true' } : {}),
+    },
   },
 });

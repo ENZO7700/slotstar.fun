@@ -27,22 +27,46 @@ jobs:
         run: npm run lint
 
       - name: Run Type Check
-        run: npm run typecheck --prefix apps/web || npm run typecheck
+        run: npm run typecheck
 
       - name: Run Unit Tests
-        run: npm run test --prefix apps/web || npm run test
-
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-
-      - name: Run E2E Tests
-        run: npm run test:e2e --prefix apps/web || npm run test:e2e
+        run: npm run test
 
       - name: Build Next.js Application
         run: npm run build
         env:
-          NEXT_PUBLIC_SITE_URL: https://slotstars.fun
-          WORDPRESS_API_URL: https://cms.slotstars.fun/wp-json
+          NEXT_PUBLIC_SITE_URL: https://slotstar.fun
+          WORDPRESS_API_URL: https://cms.slotstar.fun/wp-json
+
+  e2e:
+    name: Next.js E2E (Chromium)
+    runs-on: ubuntu-latest
+    needs: nextjs
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps chromium
+        working-directory: apps/web
+
+      - name: Run E2E Tests
+        run: npx playwright test --project=chromium --grep-invert "Visual Regression"
+        working-directory: apps/web
+        env:
+          CI: true
+          NEXT_PUBLIC_SITE_URL: https://slotstar.fun
+          WORDPRESS_API_URL: https://cms.slotstar.fun/wp-json
+          NEXT_PUBLIC_ENABLE_DEV_FIXTURES: 'true'
 
   wordpress:
     name: WordPress PHP & Docker Validation

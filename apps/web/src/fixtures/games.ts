@@ -32,17 +32,21 @@ export const mockTypes: TaxonomyTerm[] = [
   { id: 5, name: 'Bonus Buy Automaty', slug: 'bonus-buy' }
 ];
 
+function localThumbnail(slug: string, alt: string) {
+  return {
+    src: `/images/games/${slug}.png`,
+    alt,
+  };
+}
+
 export const mockGames: GameSummary[] = [
   {
     id: 101,
-    externalId: 5001,
+    externalId: 1001,
     name: 'Gates of Olympus',
-    slug: 'gates-of-olympus-5001',
-    canonicalPath: '/games/pragmatic-play/gates-of-olympus-5001',
-    thumbnail: {
-      src: 'https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=400&q=80',
-      alt: 'Gates of Olympus'
-    },
+    slug: 'gates-of-olympus-1001',
+    canonicalPath: '/games/pragmatic-play/gates-of-olympus-1001',
+    thumbnail: localThumbnail('gates-of-olympus-1001', 'Gates of Olympus'),
     provider: { id: 1, name: 'Pragmatic Play', slug: 'pragmatic-play' },
     themes: [{ id: 3, name: 'Mytológia', slug: 'mythology' }],
     type: { id: 1, name: 'Video sloty', slug: 'video-slots' },
@@ -57,14 +61,11 @@ export const mockGames: GameSummary[] = [
   },
   {
     id: 102,
-    externalId: 5002,
+    externalId: 1002,
     name: 'Sweet Bonanza',
-    slug: 'sweet-bonanza-5002',
-    canonicalPath: '/games/pragmatic-play/sweet-bonanza-5002',
-    thumbnail: {
-      src: 'https://images.unsplash.com/photo-1581798459219-318e76aecc7b?w=400&q=80',
-      alt: 'Sweet Bonanza'
-    },
+    slug: 'sweet-bonanza-1002',
+    canonicalPath: '/games/pragmatic-play/sweet-bonanza-1002',
+    thumbnail: localThumbnail('sweet-bonanza-1002', 'Sweet Bonanza'),
     provider: { id: 1, name: 'Pragmatic Play', slug: 'pragmatic-play' },
     themes: [{ id: 2, name: 'Ovocie', slug: 'fruit' }],
     type: { id: 1, name: 'Video sloty', slug: 'video-slots' },
@@ -79,21 +80,18 @@ export const mockGames: GameSummary[] = [
   },
   {
     id: 103,
-    externalId: 5003,
-    name: 'Wanted Dead or a Wild',
-    slug: 'wanted-dead-or-a-wild-5003',
-    canonicalPath: '/games/hacksaw-gaming/wanted-dead-or-a-wild-5003',
-    thumbnail: {
-      src: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?w=400&q=80',
-      alt: 'Wanted Dead or a Wild'
-    },
-    provider: { id: 2, name: 'Hacksaw Gaming', slug: 'hacksaw-gaming' },
+    externalId: 1003,
+    name: 'Big Bass Bonanza',
+    slug: 'big-bass-bonanza-1003',
+    canonicalPath: '/games/pragmatic-play/big-bass-bonanza-1003',
+    thumbnail: localThumbnail('big-bass-bonanza-1003', 'Big Bass Bonanza'),
+    provider: { id: 1, name: 'Pragmatic Play', slug: 'pragmatic-play' },
     themes: [],
     type: { id: 1, name: 'Video sloty', slug: 'video-slots' },
     filters: [],
-    releaseDate: '2021-09-29',
-    description: 'Temný western s obrovskými násobiteľmi wild a VS symbolmi.',
-    rtp: '96.38%',
+    releaseDate: '2020-12-01',
+    description: 'Rybársky automat s bonus free spins.',
+    rtp: '96.71%',
     volatility: 'High',
     featured: false,
     upcoming: false,
@@ -101,36 +99,30 @@ export const mockGames: GameSummary[] = [
   },
   {
     id: 104,
-    externalId: 5004,
-    name: 'San Quentin xWays',
-    slug: 'san-quentin-xways-5004',
-    canonicalPath: '/games/nolimit-city/san-quentin-xways-5004',
-    thumbnail: {
-      src: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&q=80',
-      alt: 'San Quentin xWays'
-    },
-    provider: { id: 3, name: 'Nolimit City', slug: 'nolimit-city' },
+    externalId: 2001,
+    name: 'Starburst',
+    slug: 'starburst-2001',
+    canonicalPath: '/games/netent/starburst-2001',
+    thumbnail: localThumbnail('starburst-2001', 'Starburst'),
+    provider: { id: 5, name: 'NetEnt', slug: 'netent' },
     themes: [],
     type: { id: 1, name: 'Video sloty', slug: 'video-slots' },
     filters: [],
-    releaseDate: '2021-01-12',
-    description: 'Najznámejšia väzenská dráma s extrémnou volatilitou a bonus buy stávkami.',
-    rtp: '96.03%',
-    volatility: 'Extreme',
+    releaseDate: '2012-11-12',
+    description: 'Kultový vesmírny automat s expanding wilds.',
+    rtp: '96.09%',
+    volatility: 'Low',
     featured: false,
     upcoming: false,
     modifiedAt: '2026-08-07 00:00:00'
   },
   {
     id: 105,
-    externalId: 5005,
+    externalId: 3001,
     name: 'Book of Dead',
-    slug: 'book-of-dead-5005',
-    canonicalPath: '/games/play-n-go/book-of-dead-5005',
-    thumbnail: {
-      src: 'https://images.unsplash.com/photo-1608889175123-8ee362201f81?w=400&q=80',
-      alt: 'Book of Dead'
-    },
+    slug: 'book-of-dead-3001',
+    canonicalPath: '/games/play-n-go/book-of-dead-3001',
+    thumbnail: localThumbnail('book-of-dead-3001', 'Book of Dead'),
     provider: { id: 4, name: 'Play\'n GO', slug: 'play-n-go' },
     themes: [
       { id: 1, name: 'Egypt', slug: 'egypt' },
@@ -148,21 +140,18 @@ export const mockGames: GameSummary[] = [
   },
   {
     id: 106,
-    externalId: 5006,
-    name: 'Chaos Crew 2',
-    slug: 'chaos-crew-2-5006',
-    canonicalPath: '/games/hacksaw-gaming/chaos-crew-2-5006',
-    thumbnail: {
-      src: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&q=80',
-      alt: 'Chaos Crew 2'
-    },
-    provider: { id: 2, name: 'Hacksaw Gaming', slug: 'hacksaw-gaming' },
+    externalId: 1005,
+    name: 'Fruit Party',
+    slug: 'fruit-party-1005',
+    canonicalPath: '/games/pragmatic-play/fruit-party-1005',
+    thumbnail: localThumbnail('fruit-party-1005', 'Fruit Party'),
+    provider: { id: 1, name: 'Pragmatic Play', slug: 'pragmatic-play' },
     themes: [],
     type: { id: 1, name: 'Video sloty', slug: 'video-slots' },
     filters: [],
-    releaseDate: '2023-09-28',
-    description: 'Graffiti punkový mačací chaos s obrovským násobiteľovým bonusom.',
-    rtp: '96.27%',
+    releaseDate: '2020-05-01',
+    description: 'Ovocný cluster slot s multiplikátormi.',
+    rtp: '96.47%',
     volatility: 'High',
     featured: false,
     upcoming: true,

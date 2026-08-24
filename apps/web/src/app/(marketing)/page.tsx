@@ -4,6 +4,7 @@ import type { Provider } from "@/types/provider";
 import type { BlogPost } from "@/lib/api/wordpress";
 import { PartnerStrip } from "@/components/ui/AffiliateComponents";
 import { ApiErrorState } from "@/components/states/ApiErrorState";
+import { getPublicErrorMessage } from "@/lib/safe-error";
 import {
   LandingCategoryNav,
   LandingEditorial,
@@ -76,7 +77,7 @@ export default async function MarketingHomePage() {
       throw first.reason instanceof Error ? first.reason : new Error("API unavailable");
     }
   } catch (err: unknown) {
-    errorMsg = err instanceof Error ? err.message : "Nepodarilo sa pripojiť k WordPress REST API";
+    errorMsg = getPublicErrorMessage(err, "Nepodarilo sa pripojiť k WordPress REST API");
   }
 
   if (errorMsg && !health) {

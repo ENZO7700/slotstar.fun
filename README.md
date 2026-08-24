@@ -1,84 +1,82 @@
-# SlotStar.fun — WordPress & Next.js Monorepo
+# SlotStar.fun
 
-> **⚡ Rýchle spustenie na novom porte 3377:**
-> - **Vývojový server (dev):** `npm run dev` → [http://localhost:3377](http://localhost:3377)
-> - **Produkčný server:** `npm run build && npm run start` → [http://localhost:3377](http://localhost:3377)
-> - **Alternatívne cez env:** `PORT=3377 npm run dev`
+Headless WordPress CMS + Next.js frontend for the [SlotStar.fun](https://slotstar.fun) demo casino catalog.
 
-Tento repozitár obsahuje kompletný zdrojový kód pre casino affiliate portál **SlotStar.fun**. Projekt spája headless WordPress backend bežiaci na WebSupporte s moderným Next.js frontendom nasadeným na Verceli.
+## Quick start
 
----
+**Requirements:** Node.js 22+, npm
 
-## 1. Rýchly prehľad (Production Overview)
-
-| Komponent | Služba / Registrátor | URL / Repozitár |
-| :--- | :--- | :--- |
-| **GitHub Repozitár** | GitHub (`ENZO7700`) | `https://github.com/ENZO7700/slotstar.fun` |
-| **Frontend (Next.js)** | Vercel | `https://slotstar-fun.vercel.app` (alebo `https://slotstar.fun`) |
-| **Backend (WordPress CMS)** | WebSupport | `http://slotstars.kestudio.sk` |
-| **WP Admin Panel** | WebSupport | `http://slotstars.kestudio.sk/wp-admin` |
-| **Headless REST API** | WordPress | `http://slotstars.kestudio.sk/wp-json/slotstar/v1` |
-| **Databáza** | WebSupport MySQL 8.4 | Host: `db.r1.websupport.sk:3317` (DB: `b4xq5Yx9`) |
-| **Affiliate Ref ID** | SlotsLaunch | `wa1UHO8r` |
-
----
-
-## 2. Architektúra & Štruktúra Repozitára
-
-```text
-├── apps/
-│   ├── web/                     # Next.js App Router (React 19, TypeScript, Tailwind CSS)
-│   └── wordpress/               # WordPress Core, custom headless plugins & themes
-│       └── wp-content/plugins/
-│           ├── slotslaunch/     # Oficiálny SlotsLaunch Importer plugin (v1.4.1.6)
-│           └── slotstar-headless/# Custom SlotStar Headless REST API plugin
-├── infra/
-│   ├── cloud-run/               # Cloud Run service definitions (GCP ready)
-│   ├── docker/                  # Dockerfile & php.ini pre WordPress kontajner
-│   └── scripts/                 # Automatizačné skripty (Vercel env setup, GCP bootstrap)
-├── docs/                        # Detailné technické špecifikácie (API, DNS, DB, Logy)
-├── DEVELOPER.md                 # Kompletný vývojársky manuál, endpointy a príručka
-├── package.json                 # Monorepo workspaces definícia
-└── setup-websupport-wp.sh       # Skript pre balenie a nasadenie na WebSupport
-```
-
----
-
-## 3. Lokálny Vývoj (Local Development)
-
-### 3.1 Prerekvizity
-- **Node.js**: verzia 20+
-- **PHP**: verzia 8.2+
-- **MySQL**: verzia 8.0+
-
-### 3.2 Spustenie Next.js Vývojového Servera
 ```bash
-# Nainštalovať závislosti pre celý monorepo workspace
+# Install dependencies (monorepo root)
 npm install
 
-# Spustiť vývojový server
-cd apps/web
+# Copy environment template and fill in values locally
+cp .env.example .env.local
+
+# Start the Next.js dev server (http://localhost:3377)
 npm run dev
 ```
-Aplikácia pobeží na `http://localhost:3377`.
 
----
+### Production build
 
-## 4. Nasadenie (Deployment Workflow)
-
-### Next.js (Vercel)
-Každý push do vetvy `main` na GitHube (`ENZO7700/slotstar.fun`) automaticky spustí produkčný build na Verceli.
-
-Automatické pridanie Environment Variables a trigger redeployu z terminálu:
 ```bash
-./infra/scripts/setup-vercel-env.sh
+npm run build
+npm run start -w @slotstar/web
 ```
 
----
+## Health checks
 
-## 5. Dokumentácia
+| Endpoint | Purpose |
+| :--- | :--- |
+| `GET /api/health` | Liveness — app process is running |
+| `GET /api/ready` | Readiness — WordPress backend is reachable |
 
-Pre podrobné príručky pozrite:
-- **[DEVELOPER.md](file:///Users/erikbabcan/HUB/01-Projekty/slotstar.fun/DEVELOPER.md)**: Kompletný vývojársky a administrátorský manuál, zoznam všetkých endpointov a návod na obsluhu.
-- **[docs/REST_API.md](file:///Users/erikbabcan/HUB/01-Projekty/slotstar.fun/docs/REST_API.md)**: Detailná špecifikácia REST API endpointov `/games`, `/providers` a `/health`.
-- **[docs/DNS_SETUP.md](file:///Users/erikbabcan/HUB/01-Projekty/slotstar.fun/docs/DNS_SETUP.md)**: DNS konfigurácie pre Vercel a WebSupport.
+## Environment variables
+
+Copy `.env.example` to `.env.local` for local development. Set the same keys in Vercel for production. **Never commit real secret values.**
+
+| Key | Scope | Description |
+| :--- | :--- | :--- |
+| `NEXT_PUBLIC_SITE_URL` | Public | Canonical site URL |
+| `NEXT_PUBLIC_SLOTSLAUNCH_REF_ID` | Public | SlotsLaunch affiliate reference ID |
+| `WORDPRESS_API_URL` | Server | WordPress REST API base URL |
+| `SLOTSTAR_BRIDGE_SECRET` | Server | HMAC secret for WordPress launch bridge |
+| `KSL_BRIDGE_SHARED_SECRET` | Server | Shared bridge secret (WordPress side) |
+| `KSL_REVALIDATE_SECRET` | Server | On-demand revalidation secret |
+| `KSL_NEXT_REVALIDATE_URL` | Server | Next.js revalidation webhook URL |
+| `KSL_NEXT_REVALIDATE_SECRET` | Server | Next.js revalidation webhook secret |
+| `SLOTSLAUNCH_REGISTERED_HOST` | Server | Registered SlotsLaunch host |
+| `SLOTSLAUNCH_ORIGIN` | Server | SlotsLaunch origin header |
+| `KSL_SLOTSLAUNCH_TOKEN` | Server | SlotsLaunch API token |
+| `KSL_SLOTSLAUNCH_EMBED_TOKEN` | Server | SlotsLaunch embed token |
+| `KSL_SLOTSLAUNCH_ORIGIN` | Server | SlotsLaunch request origin |
+| `KSL_SLOTSLAUNCH_RATE_LIMIT_RPS` | Server | SlotsLaunch rate limit (requests/sec) |
+| `KSL_SOURCE_MODE` | Server | Data source mode (`auto`, etc.) |
+| `KSL_REQUEST_TIMEOUT_MS` | Server | Upstream request timeout |
+| `KSL_ENABLE_LAUNCH` | Server | Enable game launch bridge |
+| `KSL_USE_FIXTURES` | Server | Use local fixtures instead of CMS |
+| `PORT` | Server | Dev server port (default `3377`) |
+
+For Docker-based WordPress development, see `.env.docker.example`.
+
+## Scripts
+
+| Command | Description |
+| :--- | :--- |
+| `npm run dev` | Start Next.js dev server |
+| `npm run build` | Production build |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | TypeScript check |
+| `npm run test` | Unit tests (Vitest) |
+| `npm run test:e2e` | Playwright E2E tests |
+
+## Repository layout
+
+```text
+apps/web/          Next.js frontend (Vercel)
+apps/wordpress/    WordPress plugins & themes (WebSupport CMS)
+infra/             Docker, deployment scripts
+docs/              Technical documentation
+```
+
+See [DEVELOPER.md](./DEVELOPER.md) for detailed developer documentation.

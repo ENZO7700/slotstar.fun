@@ -2,6 +2,7 @@ import React from 'react';
 import { getGames } from '@/lib/api/wordpress';
 import { GameGrid } from '@/components/games/GameGrid';
 import { ApiErrorState } from '@/components/states/ApiErrorState';
+import { getPublicErrorMessage } from '@/lib/safe-error';
 import { GameSummary } from '@/types/game';
 
 export const dynamic = 'force-dynamic';
@@ -18,7 +19,7 @@ export default async function FeaturedGamesPage() {
       games = res.data.slice(0, 12);
     }
   } catch (err: unknown) {
-    errorMsg = err instanceof Error ? err.message : 'Chyba pri načítaní odporúčaných hier.';
+    errorMsg = getPublicErrorMessage(err, 'Chyba pri načítaní odporúčaných hier.');
   }
 
   if (errorMsg) {

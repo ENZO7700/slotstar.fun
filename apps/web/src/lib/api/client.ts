@@ -125,7 +125,11 @@ export async function fetchApi<T>(
       throw new ApiTimeoutError();
     }
 
-    throw new ApiConnectionError(err instanceof Error ? err.message : 'Unknown connection error');
+    const detail =
+      process.env.NODE_ENV !== 'production' && err instanceof Error
+        ? err.message
+        : undefined;
+    throw new ApiConnectionError(detail);
   } finally {
     clearTimeout(timeoutId);
   }
